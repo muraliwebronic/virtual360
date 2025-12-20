@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@300;400;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* Color Variables */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --base-bg: #F7FAFD;
+  --primary: #4888E8;
+  --primary-dark: #1D65CF;
+  --secondary: #09B125;
+  --secondary-light: #BBF7D0;
+  --secondary-fade: #65EE7C2E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme {
+  /* Font Config */
+  /* Note: 'Bangers' is added here since you imported it */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-bangers: "Bangers", system-ui;
+
+  /* Color Config Mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-base: var(--base-bg);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-fade: var(--secondary-fade);
+
+  /* Animations & Keyframes (Tailwind v4 Syntax) */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-up: fadeInUp 0.8s ease-out forwards;
+  --animate-fly-left: flyInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  --animate-fly-right: flyInRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+
+  --keyframes-float: {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  --keyframes-fadeInUp: {
+    0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  --keyframes-flyInLeft: {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  --keyframes-flyInRight: {
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+}
+
+/* Global Resets */
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .grad-primary {
+    background-image: linear-gradient(to right, var(--primary), var(--secondary));
+  }
+
+  .grad-secondary {
+    background-image: linear-gradient(to right, var(--secondary), var(--primary));
+  }
+
+  .text-grad-primary {
+    background-image: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(72, 136, 232, 0.2);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Animation Delays */
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
