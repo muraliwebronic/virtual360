@@ -26,7 +26,7 @@ const Pricing = () => {
       description: 'For freelancers and small businesses building their first experience.',
       price: '$39',
       period: '/ year',
-      headerImage: './Icons/360 Tour Website/flat.png', 
+      headerImage: '../Icons/360 Tour Website/flat.png', 
       isPopular: false,
       features: [
         { text: '3 Active Virtual Tours', included: true },
@@ -42,7 +42,7 @@ const Pricing = () => {
       description: 'Unlimited power for agencies selling tours as a service.',
       price: '$99',
       period: '/ year',
-      headerImage: './Icons/360 Tour Website/motorcycle_3541614.png',
+      headerImage: '../Icons/360 Tour Website/motorcycle_3541614.png',
       isPopular: true, // This is your Volume Seller
       features: [
         { text: 'Unlimited Virtual Tours', included: true },
@@ -58,7 +58,7 @@ const Pricing = () => {
       description: 'For studios requiring spatial computing and API integration.',
       price: '$299',
       period: '/ year',
-      headerImage: './Icons/360 Tour Website/Pro.png', 
+      headerImage: '../Icons/360 Tour Website/Pro.png', 
       isPopular: false,
       isEnterprise: true,
       features: [

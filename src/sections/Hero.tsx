@@ -79,7 +79,7 @@ const HeroSection = () => {
             <div className="relative z-10 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 transform transition-transform duration-500 md:rotate-y-6 md:rotate-x-6 hover:rotate-0">
                <div className="bg-gray-100 rounded-xl overflow-hidden aspect-[4/3] relative group">
                   <img 
-                    src="/Icons/360 Tour Website/Group 2586.png" 
+                    src="./Icons/360 Tour Website/Group 2586.png" 
                     alt="Web Dashboard View"
                     className="w-full h-full object-cover"
                   />
@@ -114,7 +114,7 @@ const HeroSection = () => {
                     {/* Content Preview */}
                     <div className="relative rounded-xl overflow-hidden aspect-video bg-gray-900 group cursor-pointer">
                         <img 
-                            src="/Icons/360 Tour Website/Group 2584.png"
+                            src="./Icons/360 Tour Website/Group 2584.png"
                             alt="Spatial View"
                             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                         />

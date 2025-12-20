@@ -68,7 +68,7 @@ const Hero = () => {
                 </div>
 
                 <img
-                  src="./image/hero2.png"
+                  src="../image/hero2.png"
                   alt="360 Tour Demo"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover/monitor:scale-105"
                 />

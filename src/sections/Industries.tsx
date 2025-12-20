@@ -5,32 +5,32 @@ const Industries = () => {
   const industries = [
     {
       title: "Retail & Showrooms",
-      icon: "/Icons/360 Tour Website/Group 104.png",
+      icon: "./Icons/360 Tour Website/Group 104.png",
     },
     {
       title: "Real Estate",
-      icon: "/Icons/360 Tour Website/group-151.png",
+      icon: "./Icons/360 Tour Website/group-151.png",
     },
     {
       title: "Schools & University",
-      icon: "/Icons/360 Tour Website/group-150.png",
+      icon: "./Icons/360 Tour Website/group-150.png",
     },
     {
       title: "Hotels & Resorts",
-      icon: "/Icons/360 Tour Website/Group 73.png",
+      icon: "./Icons/360 Tour Website/Group 73.png",
     },
     {
       title: "Museums & Exhibitions",
-      icon: "/Icons/360 Tour Website/Group 98.png",
+      icon: "./Icons/360 Tour Website/Group 98.png",
     },
     {
       title: "Offices & Workspaces",
-      icon: "/Icons/360 Tour Website/group-152.png",
+      icon: "./Icons/360 Tour Website/group-152.png",
     },
     // --- STRATEGIC SWAP: High-Value Target for Vision Pro ---
     {
       title: "Architecture & Interiors", // Swapped from "Amusement"
-      icon: "/Icons/360 Tour Website/Group 149.png", // Kept same icon or use a specific building icon if available
+      icon: "./Icons/360 Tour Website/Group 149.png", // Kept same icon or use a specific building icon if available
     },
     // --------------------------------------------------------
   ];

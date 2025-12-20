@@ -4,32 +4,32 @@ const Features = () => {
   // Mapped icons based on your uploaded image and folder structure
   const features = [
     {
-      icon: "/Icons/360 Tour Website/Group 2560.png", 
+      icon: "./Icons/360 Tour Website/Group 2560.png", 
       title: "Unlimited Tours",
       description: "Create multiple virtual tours for different spaces and properties without any restrictions.",
     },
     {
-      icon: "/Icons/360 Tour Website/Group 2561.png", 
+      icon: "./Icons/360 Tour Website/Group 2561.png", 
       title: "Interactive Hotspots",
       description: "Add navigation points and information hotspots to guide visitors through your tours.",
     },
     {
-      icon: "/Icons/360 Tour Website/Group 2562.png",
+      icon: "./Icons/360 Tour Website/Group 2562.png",
       title: "Live Preview",
       description: "See changes in real-time as you build your tours with our instant preview feature.",
     },
     {
-      icon: "/Icons/360 Tour Website/Group 2563.png",
+      icon: "./Icons/360 Tour Website/Group 2563.png",
       title: "Full-Screen Mode",
       description: "Immersive viewing experience with full-screen mode for maximum impact.",
     },
     {
-      icon: "/Icons/360 Tour Website/Group 2564.png",
+      icon: "./Icons/360 Tour Website/Group 2564.png",
       title: "Mobile Responsive",
       description: "Perfect viewing experience on all devices - desktop, tablet, and mobile.",
     },
     {
-      icon: "/Icons/360 Tour Website/Group 2566.png", 
+      icon: "./Icons/360 Tour Website/Group 2566.png", 
       title: "One-Click Embed",
       description: "Simple shortcode integration - just copy and paste into any WordPress page or post.",
     },

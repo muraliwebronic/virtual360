@@ -11,7 +11,7 @@ const USPShowcase = () => {
       title: "Clean UI & Simple Workflow",
       description: "Drag, drop, and link scenes in minutes. Our no-code editor is designed for speed, not complexity.",
       icon: <Monitor size={20} />,
-      visual: "/Icons/360 Tour Website/Group 2586.png", // Represents the Editor/Web View
+      visual: "./Icons/360 Tour Website/Group 2586.png", // Represents the Editor/Web View
       tag: "Web Editor",
     },
     {
@@ -19,7 +19,7 @@ const USPShowcase = () => {
       title: "Fast Embedding",
       description: "No heavy iframes or complex setups. Just copy one shortcode and your tour is live on WordPress.",
       icon: <Copy size={20} />,
-      visual: "/Icons/360 Tour Website/Group 2566.png", // Represents the Link/Embed action
+      visual: "./Icons/360 Tour Website/Group 2566.png", // Represents the Link/Embed action
       tag: "WordPress Ready",
     },
     {
@@ -27,7 +27,7 @@ const USPShowcase = () => {
       title: "360° → VR-Ready Pipeline",
       description: "The only plugin that automatically converts your web tours into spatial assets for Apple Vision Pro.",
       icon: <Glasses size={20} />,
-      visual: "/Icons/360 Tour Website/Group 2584.png", // Represents the VR/Spatial View
+      visual: "./Icons/360 Tour Website/Group 2584.png", // Represents the VR/Spatial View
       tag: "Vision Pro Ready",
     },
   ];

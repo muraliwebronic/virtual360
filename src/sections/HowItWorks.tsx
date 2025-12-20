@@ -4,20 +4,20 @@ import React from "react";
 const HowItWorks = () => {
   const steps = [
     {
-      icon: "/Icons/360 Tour Website/Group 2565.png",
+      icon: "./Icons/360 Tour Website/Group 2565.png",
       title: "Upload Your 360° Images",
       description:
         "Upload your 360° panorama images or regular photos to get started.",
     },
     {
-      icon: "/Icons/360 Tour Website/Group 2566.png",
+      icon: "./Icons/360 Tour Website/Group 2566.png",
       title: "Add Scenes & Hotspots",
       description:
         "Organize your images into scenes and connect them with navigation hotspots.",
     },
     // --- STRATEGIC UPDATE: Modified to include Spatial/VR Context ---
     {
-      icon: "/Icons/360 Tour Website/Group 2567.png",
+      icon: "./Icons/360 Tour Website/Group 2567.png",
       title: "Publish Everywhere", // Changed from "Embed & Share"
       description:
         "Embed on WordPress with a simple shortcode, or launch immersive mode for Vision Pro & VR users.", // Added Spatial Context
