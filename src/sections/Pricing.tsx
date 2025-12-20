@@ -2,91 +2,25 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
 
-const PricingCard = ({ plan }) => {
-  const {
-    title,
-    description,
-    price,
-    period,
-    features,
-    buttonText,
-    isPopular,
-    headerImage,
-    isEnterprise
-  } = plan;
 
-  return (
-    <div
-      className={`bg-white rounded-[2rem] p-8 relative flex flex-col h-full transition-all duration-300 ${
-        isPopular 
-          ? 'border-2 border-[#2A74ED] shadow-2xl scale-105 z-10' 
-          : 'border border-gray-200 hover:border-gray-300 hover:shadow-lg'
-      }`}
-    >
-      {isPopular && (
-        <div className="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
-           <span className="bg-[#2A74ED] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
-             Best Value
-           </span>
-        </div>
-      )}
-
-      {/* Header Image */}
-      <div className="mb-6 flex justify-center h-20 items-center">
-        <img src={headerImage} alt={title} className="h-full w-auto object-contain" />
-      </div>
-
-      <div className="flex-grow">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-500 mb-6 text-sm leading-relaxed min-h-[40px]">{description}</p>
-
-        {/* Pricing */}
-        <div className="mb-8">
-          <div className="flex items-baseline">
-            <span className={`text-4xl font-bold ${isPopular ? 'text-[#2A74ED]' : 'text-gray-900'}`}>
-              {price}
-            </span>
-            <span className="text-gray-500 ml-2 font-medium">{period}</span>
-          </div>
-        </div>
-
-        {/* Features List */}
-        <ul className="space-y-4 mb-8">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start text-gray-700">
-              <div className={`mt-0.5 p-0.5 rounded-full mr-3 flex-shrink-0 ${
-                feature.included 
-                  ? (isPopular ? 'bg-[#2A74ED]/10 text-[#2A74ED]' : 'bg-green-100 text-green-600') 
-                  : 'bg-gray-100 text-gray-400'
-              }`}>
-                {feature.included ? <Check size={14} strokeWidth={3} /> : <X size={14} strokeWidth={3} />}
-              </div>
-              <span className={`text-sm font-medium ${feature.included ? 'text-gray-700' : 'text-gray-400 line-through'}`}>
-                {feature.text}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* CTA Button */}
-      <button
-        className={`w-full py-4 rounded-xl font-semibold flex items-center justify-center transition-all duration-300 ${
-          isPopular
-            ? 'bg-[#2A74ED] text-white hover:bg-[#1a5fc7] shadow-lg shadow-blue-500/30'
-            : isEnterprise
-              ? 'bg-[#1A1A1A] text-white hover:bg-black'
-              : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-        }`}
-      >
-        {buttonText}
-      </button>
-    </div>
-  );
-};
+export type planType = {
+    title: string;
+    description: string;
+    price: string;
+    period: string;
+    headerImage: string;
+    isPopular: boolean;
+    features: {
+        text: string;
+        included: boolean;
+    }[];
+    buttonText: string;
+    isEnterprise?: boolean;
+}
 
 const Pricing = () => {
-  const plans = [
+
+  const plans:planType[] = [
     {
       title: 'Starter',
       description: 'For freelancers and small businesses building their first experience.',
@@ -173,3 +107,87 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
+
+
+const PricingCard = ({ plan }: { plan: planType }) => {  const {
+    title,
+    description,
+    price,
+    period,
+    features,
+    buttonText,
+    isPopular,
+    headerImage,
+    isEnterprise
+  } = plan;
+
+  return (
+    <div
+      className={`bg-white rounded-[2rem] p-8 relative flex flex-col h-full transition-all duration-300 ${
+        isPopular 
+          ? 'border-2 border-[#2A74ED] shadow-2xl scale-105 z-10' 
+          : 'border border-gray-200 hover:border-gray-300 hover:shadow-lg'
+      }`}
+    >
+      {isPopular && (
+        <div className="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+           <span className="bg-[#2A74ED] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
+             Best Value
+           </span>
+        </div>
+      )}
+
+      {/* Header Image */}
+      <div className="mb-6 flex justify-center h-20 items-center">
+        <img src={headerImage} alt={title} className="h-full w-auto object-contain" />
+      </div>
+
+      <div className="flex-grow">
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
+        <p className="text-gray-500 mb-6 text-sm leading-relaxed min-h-[40px]">{description}</p>
+
+        {/* Pricing */}
+        <div className="mb-8">
+          <div className="flex items-baseline">
+            <span className={`text-4xl font-bold ${isPopular ? 'text-[#2A74ED]' : 'text-gray-900'}`}>
+              {price}
+            </span>
+            <span className="text-gray-500 ml-2 font-medium">{period}</span>
+          </div>
+        </div>
+
+        {/* Features List */}
+        <ul className="space-y-4 mb-8">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-start text-gray-700">
+              <div className={`mt-0.5 p-0.5 rounded-full mr-3 flex-shrink-0 ${
+                feature.included 
+                  ? (isPopular ? 'bg-[#2A74ED]/10 text-[#2A74ED]' : 'bg-green-100 text-green-600') 
+                  : 'bg-gray-100 text-gray-400'
+              }`}>
+                {feature.included ? <Check size={14} strokeWidth={3} /> : <X size={14} strokeWidth={3} />}
+              </div>
+              <span className={`text-sm font-medium ${feature.included ? 'text-gray-700' : 'text-gray-400 line-through'}`}>
+                {feature.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* CTA Button */}
+      <button
+        className={`w-full py-4 rounded-xl font-semibold flex items-center justify-center transition-all duration-300 ${
+          isPopular
+            ? 'bg-[#2A74ED] text-white hover:bg-[#1a5fc7] shadow-lg shadow-blue-500/30'
+            : isEnterprise
+              ? 'bg-[#1A1A1A] text-white hover:bg-black'
+              : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+        }`}
+      >
+        {buttonText}
+      </button>
+    </div>
+  );
+};
