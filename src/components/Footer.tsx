@@ -7,23 +7,24 @@ const Footer = () => {
 
   const footerLinks = {
     product: [
-      { name: "Features", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Showcase", href: "#" },
-      { name: "Spatial Mode", href: "#" },
-      { name: "Changelog", href: "#" },
+      { name: "Home", href: "/" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "Contact", href: "/contact" },
+      // { name: "Showcase", href: "#" },
+      // { name: "Spatial Mode", href: "#" },
+      // { name: "Changelog", href: "#" },
     ],
     resources: [
       { name: "Documentation", href: "#" },
       { name: "API Reference", href: "#" },
-      { name: "Community", href: "#" },
-      { name: "Academy", href: "#" },
-      { name: "Help Center", href: "#" },
+      // { name: "Community", href: "#" },
+      // { name: "Academy", href: "#" },
+      // { name: "Help Center", href: "#" },
     ],
     company: [
-      { name: "About", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Partners", href: "#" },
+      // { name: "About", href: "#" },
+      // { name: "Blog", href: "#" },
+      // { name: "Partners", href: "#" },
       { name: "Legal", href: "#" },
       { name: "Privacy", href: "#" },
     ],
@@ -118,10 +119,10 @@ const Footer = () => {
             <p className="text-sm text-gray-400">
                 © {currentYear} Webronic Inc. All rights reserved.
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+            {/* <div className="flex items-center gap-2 text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                 System Status: Operational
-            </div>
+            </div> */}
         </div>
 
       </div>

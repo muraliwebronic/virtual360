@@ -19,7 +19,7 @@ const USPShowcase = () => {
       title: "Fast Embedding",
       description: "No heavy iframes or complex setups. Just copy one shortcode and your tour is live on WordPress.",
       icon: <Copy size={20} />,
-      visual: "./Icons/360 Tour Website/Group 2566.png", // Represents the Link/Embed action
+      visual: "./Icons/360 Tour Website/Group 2586.png", // Represents the Link/Embed action
       tag: "WordPress Ready",
     },
     {

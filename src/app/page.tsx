@@ -1,6 +1,6 @@
 import Faq from "@/sections/Faq";
 import Features from "@/sections/Features";
-import Footer from "@/sections/Footer";
+import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
 import HowItWorks from "@/sections/HowItWorks";
 import Industries from "@/sections/Industries";
@@ -23,8 +23,8 @@ export default function page() {
     <Pricing />
     <Faq />
     <LiveDemoGallery />
-    <SocialProof />
-    <Footer />
+    {/* <SocialProof /> */}
+   
     </>
   )
 }
