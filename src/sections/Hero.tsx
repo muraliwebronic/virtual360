@@ -56,7 +56,7 @@ const HeroSection = () => {
               </button>
             </div>
 
-            {/* Trust Indicators */}
+            {/* Trust Indicators
             <div className="flex flex-col items-center lg:items-start gap-5">
               <p className="text-xs md:text-sm text-gray-400 font-medium uppercase tracking-wider">
                 Seamless Integration With
@@ -67,7 +67,7 @@ const HeroSection = () => {
                 <span className="font-bold text-lg md:text-xl text-[#1A1A1A]">Gutenberg</span>
                 <span className="font-bold text-lg md:text-xl text-[#1A1A1A]">WooCommerce</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* --- RIGHT: Visual Bridge --- */}
