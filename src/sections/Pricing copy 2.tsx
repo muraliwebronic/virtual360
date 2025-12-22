@@ -2,73 +2,53 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
 
-
 export type planType = {
-    title: string;
-    description: string;
-    price: string;
-    period: string;
-    headerImage: string;
-    isPopular: boolean;
-    features: {
-        text: string;
-        included: boolean;
-    }[];
-    buttonText: string;
-    isEnterprise?: boolean;
+  title: string;
+  description: string;
+  price: string;
+  period: string;
+  headerImage: string;
+  isPopular: boolean;
+  features: {
+    text: string;
+    included: boolean;
+  }[];
+  buttonText: string;
+  isEnterprise?: boolean;
 }
 
 const Pricing = () => {
 
-  const plans:planType[] = [
+  const plans: planType[] = [
     {
-      title: 'Starter',
-      description: 'For freelancers and small businesses building their first experience.',
-      price: '$39',
-      period: '/ year',
-      headerImage: './Icons/360 Tour Website/flat.png', 
+      title: 'Standard',
+      description: 'Perfect for small businesses creating multiple tours and scenes',
+      price: '$0',
+      period: 'for first 14 days',
+      // I kept the motorcycle image path as it matches the scooter illustration in your image
+      headerImage: './Icons/360 Tour Website/motorcycle_3541614.png', 
       isPopular: false,
       features: [
-        { text: '3 Active Virtual Tours', included: true },
-        { text: 'Unlimited Scenes per Tour', included: true },
-        { text: 'Standard Hotspots', included: true },
-        { text: 'Remove "Powered by Webronic"', included: false },
-        { text: 'Apple Vision Pro Export', included: false },
+        { text: 'Maximum 1 Tour', included: true },
+        { text: 'Maximum 5 Scenes', included: true },
+        { text: 'Maximum 5 Hotspots', included: true },
       ],
-      buttonText: 'Start Free Trial',
+      buttonText: 'Start Your Free Trial',
     },
     {
-      title: 'Agency Pro',
-      description: 'Unlimited power for agencies selling tours as a service.',
-      price: '$99',
+      title: 'Pro',
+      description: 'Unlock unlimited potential for agencies, photographers, and growing businesses.',
+      price: '$5',
       period: '/ year',
-      headerImage: './Icons/360 Tour Website/motorcycle_3541614.png',
-      isPopular: true, // This is your Volume Seller
-      features: [
-        { text: 'Unlimited Virtual Tours', included: true },
-        { text: 'Unlimited Scenes & Hotspots', included: true },
-        { text: 'White-Label (No Branding)', included: true },
-        { text: 'Client Management Dashboard', included: true },
-        { text: 'Apple Vision Pro Export', included: false },
-      ],
-      buttonText: 'Get Agency License',
-    },
-    {
-      title: 'Enterprise XR',
-      description: 'For studios requiring spatial computing and API integration.',
-      price: '$299',
-      period: '/ year',
+      // Used the 'Pro' image path for the rocket illustration
       headerImage: './Icons/360 Tour Website/Pro.png', 
-      isPopular: false,
-      isEnterprise: true,
+      isPopular: true, 
       features: [
-        { text: 'Unlimited Virtual Tours', included: true },
-        { text: 'White-Label (No Branding)', included: true },
-        { text: 'Vision Pro & Meta Quest Export', included: true }, // The Killer Feature
-        { text: 'Developer API Access', included: true },
-        { text: 'Priority 24/7 Support', included: true },
+        { text: 'Unlimited Tours', included: true },
+        { text: 'Unlimited Scenes', included: true },
+        { text: 'Unlimited Hotspots', included: true },
       ],
-      buttonText: 'Contact Sales',
+      buttonText: 'Get Pro',
     },
   ];
 
@@ -87,8 +67,8 @@ const Pricing = () => {
           </p>
         </div>
 
-        {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start relative">
+        {/* Pricing Grid - Changed to grid-cols-2 and added max-w to center them */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <PricingCard key={index} plan={plan} />
           ))}
@@ -108,9 +88,8 @@ const Pricing = () => {
 
 export default Pricing;
 
-
-
-const PricingCard = ({ plan }: { plan: planType }) => {  const {
+const PricingCard = ({ plan }: { plan: planType }) => {
+  const {
     title,
     description,
     price,
@@ -133,7 +112,7 @@ const PricingCard = ({ plan }: { plan: planType }) => {  const {
       {isPopular && (
         <div className="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
            <span className="bg-[#2A74ED] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
-             Best Value
+             Most Popular
            </span>
         </div>
       )}
@@ -149,7 +128,7 @@ const PricingCard = ({ plan }: { plan: planType }) => {  const {
 
         {/* Pricing */}
         <div className="mb-8">
-          <div className="flex items-baseline">
+          <div className="flex items-baseline flex-wrap">
             <span className={`text-4xl font-bold ${isPopular ? 'text-[#2A74ED]' : 'text-gray-900'}`}>
               {price}
             </span>

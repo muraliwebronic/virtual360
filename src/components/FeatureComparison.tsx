@@ -3,10 +3,7 @@ import React from "react";
 import { Check, X } from "lucide-react";
 
 const FeatureComparison = () => {
-  const plans = [
-    { name: "Standard Plan" },
-    { name: "Pro Plan" },
-  ];
+  const plans = [{ name: "Standard Plan" }, { name: "Pro Plan" }];
 
   // Data extracted from the image (Standard vs Pro)
   const features = [
@@ -28,6 +25,13 @@ const FeatureComparison = () => {
       pro: "Unlimited",
       highlight: true,
     },
+    {
+      name: "Maximum Sites",
+      standard: "1",
+      pro: "3",
+      highlight: true,
+    },
+
     {
       name: "Custom Colors",
       standard: false,
@@ -75,7 +79,6 @@ const FeatureComparison = () => {
   return (
     <section className="bg-white py-16 font-['Poppins']">
       <div className="container max-w-4xl mx-auto px-4">
-        
         {/* Section Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-[#1A1A1A] mb-2">
@@ -92,13 +95,16 @@ const FeatureComparison = () => {
             {/* Table Header */}
             <thead className="bg-[#2A74ED] text-white">
               <tr>
-                <th scope="col" className="px-6 py-4 font-bold text-white w-1/3">
+                <th
+                  scope="col"
+                  className="px-6 py-4 font-bold text-white w-1/3"
+                >
                   Features
                 </th>
                 {plans.map((plan, index) => (
-                  <th 
-                    key={index} 
-                    scope="col" 
+                  <th
+                    key={index}
+                    scope="col"
                     className="px-6 py-4 font-bold text-white text-center w-1/3"
                   >
                     {plan.name}
@@ -106,12 +112,12 @@ const FeatureComparison = () => {
                 ))}
               </tr>
             </thead>
-            
+
             {/* Table Body */}
             <tbody className="divide-y divide-gray-100">
               {features.map((feature, idx) => (
-                <tr 
-                  key={idx} 
+                <tr
+                  key={idx}
                   className={`transition-colors hover:bg-gray-50/50 ${
                     idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"
                   }`}
@@ -123,26 +129,37 @@ const FeatureComparison = () => {
 
                   {/* Standard Column */}
                   <td className="px-6 py-3 text-center">
-                    <StatusCell value={feature.standard} highlight={feature.highlight} />
+                    <StatusCell
+                      value={feature.standard}
+                      highlight={feature.highlight}
+                    />
                   </td>
 
                   {/* Pro Column */}
                   <td className="px-6 py-3 text-center">
-                    <StatusCell value={feature.pro} highlight={feature.highlight} />
+                    <StatusCell
+                      value={feature.pro}
+                      highlight={feature.highlight}
+                    />
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-
       </div>
     </section>
   );
 };
 
 // Helper component to render Check, X, or Text with the SAME styling as PricingCard
-const StatusCell = ({ value, highlight }: { value: string | boolean; highlight: boolean }) => {
+const StatusCell = ({
+  value,
+  highlight,
+}: {
+  value: string | boolean;
+  highlight: boolean;
+}) => {
   if (value === true) {
     return (
       <div className="flex justify-center">
@@ -153,7 +170,7 @@ const StatusCell = ({ value, highlight }: { value: string | boolean; highlight: 
       </div>
     );
   }
-  
+
   if (value === false) {
     return (
       <div className="flex justify-center">
@@ -167,7 +184,11 @@ const StatusCell = ({ value, highlight }: { value: string | boolean; highlight: 
 
   // Render text (e.g., "5" or "Unlimited")
   return (
-    <span className={`font-bold ${value === "Unlimited" || highlight ? "text-[#027A48]" : "text-gray-900"}`}>
+    <span
+      className={`font-bold ${
+        value === "Unlimited" || highlight ? "text-[#027A48]" : "text-gray-900"
+      }`}
+    >
       {value}
     </span>
   );

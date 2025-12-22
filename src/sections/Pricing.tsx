@@ -7,6 +7,7 @@ export type planType = {
   description: string;
   price: string;
   period: string;
+  trialPeriod?: string; // Added this to match your screenshot layout
   headerImage: string;
   isPopular: boolean;
   features: {
@@ -23,32 +24,36 @@ const Pricing = () => {
     {
       title: 'Standard',
       description: 'Perfect for small businesses creating multiple tours and scenes',
-      price: '$0',
-      period: 'for first 14 days',
-      // I kept the motorcycle image path as it matches the scooter illustration in your image
+      price: '$19',
+      period: 'Launch Offer',
+      trialPeriod: '14 days - Free Trial',
+      // Kept your motorcycle path
       headerImage: './Icons/360 Tour Website/motorcycle_3541614.png', 
       isPopular: false,
       features: [
         { text: 'Maximum 1 Tour', included: true },
         { text: 'Maximum 5 Scenes', included: true },
         { text: 'Maximum 5 Hotspots', included: true },
+        { text: 'Maximum 1 Site', included: true },
       ],
-      buttonText: 'Start Your Free Trial',
+      buttonText: 'Start 14-Day Free Trial',
     },
     {
       title: 'Pro',
       description: 'Unlock unlimited potential for agencies, photographers, and growing businesses.',
-      price: '$5',
-      period: '/ year',
-      // Used the 'Pro' image path for the rocket illustration
+      price: '$59',
+      period: 'Launch Offer',
+      trialPeriod: '7 days - Free Trial',
+      // Kept your pro/rocket path
       headerImage: './Icons/360 Tour Website/Pro.png', 
       isPopular: true, 
       features: [
         { text: 'Unlimited Tours', included: true },
         { text: 'Unlimited Scenes', included: true },
         { text: 'Unlimited Hotspots', included: true },
+        { text: 'Maximum 3 Sites', included: true },
       ],
-      buttonText: 'Get Pro',
+      buttonText: 'Start 7-Day Free Trial',
     },
   ];
 
@@ -67,7 +72,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        {/* Pricing Grid - Changed to grid-cols-2 and added max-w to center them */}
+        {/* Pricing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <PricingCard key={index} plan={plan} />
@@ -77,7 +82,7 @@ const Pricing = () => {
         {/* Guarantee / Trust Footer */}
         <div className="mt-16 text-center">
             <p className="text-gray-400 text-sm">
-                All plans come with a 14-day money-back guarantee. No credit card required for trial.
+                All plans come with a money-back guarantee. No credit card required for trial.
             </p>
         </div>
 
@@ -94,6 +99,7 @@ const PricingCard = ({ plan }: { plan: planType }) => {
     description,
     price,
     period,
+    trialPeriod,
     features,
     buttonText,
     isPopular,
@@ -124,15 +130,21 @@ const PricingCard = ({ plan }: { plan: planType }) => {
 
       <div className="flex-grow">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-500 mb-6 text-sm leading-relaxed min-h-[40px]">{description}</p>
+        <p className="text-gray-500 mb-4 text-sm leading-relaxed min-h-[40px]">{description}</p>
 
-        {/* Pricing */}
+        {/* Pricing Area */}
         <div className="mb-8">
+          {/* Added Trial Period Text */}
+          {trialPeriod && (
+             <p className="text-sm font-semibold text-gray-900 mb-1">{trialPeriod}</p>
+          )}
           <div className="flex items-baseline flex-wrap">
             <span className={`text-4xl font-bold ${isPopular ? 'text-[#2A74ED]' : 'text-gray-900'}`}>
               {price}
             </span>
-            <span className="text-gray-500 ml-2 font-medium">{period}</span>
+            <span className="text-gray-500 ml-2 font-medium text-sm bg-gray-100 px-2 py-1 rounded-md">
+              {period}
+            </span>
           </div>
         </div>
 

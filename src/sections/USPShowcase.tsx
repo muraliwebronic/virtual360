@@ -131,7 +131,7 @@ const USPShowcase = () => {
                 {/* Specific Overlay for 'Embed' Step */}
                 {index === 1 && (
                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-[#1A1A1A] text-white px-4 py-2 rounded-lg font-mono text-sm shadow-xl">
-                      [webronic_360_tour id="101"]
+                      {/* [webronic_360_tour id="101"] */}
                    </div>
                 )}
 
