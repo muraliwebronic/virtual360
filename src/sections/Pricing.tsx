@@ -152,13 +152,13 @@ const Pricing = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-14 text-center">
+        {/* <div className="mt-14 text-center">
           <p className="text-gray-400 text-xs flex items-center justify-center gap-2">
             <AlertCircle size={15} />
             All plans come with a money-back guarantee. No credit card required
             for trial.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
