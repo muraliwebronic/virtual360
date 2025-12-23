@@ -6,6 +6,7 @@ import HowItWorks from "@/sections/HowItWorks";
 import Industries from "@/sections/Industries";
 import LiveDemoGallery from "@/sections/LiveDemoGallery";
 import Pricing from "@/sections/Pricing";
+import Pricingv1 from "@/sections/Pricingv1";
 import SocialProof from "@/sections/SocialProof";
 import StatsCard from "@/sections/StatsCard";
 import USPShowcase from "@/sections/USPShowcase";
@@ -20,6 +21,7 @@ export default function page() {
     <StatsCard />
     <HowItWorks />
     <Industries />
+    {/* <Pricingv1 /> */}
     <Pricing />
     <Faq />
     <LiveDemoGallery />
