@@ -6,10 +6,10 @@ export type planType = {
   title: string;
   description: string;
   price: string;
-  originalPrice: string; // Added for Strikethrough effect
-  discountBadge: string; // Added for "60% OFF" etc
+  originalPrice: string;
+  discountBadge: string;
   period: string;
-  billingFootnote?: string; // Added for "Billed $19.99 yearly"
+  billingFootnote: string;
   trialPeriod?: string;
   headerImage: string;
   isPopular: boolean;
@@ -22,19 +22,25 @@ export type planType = {
 };
 
 const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(true); // Default to Annual to show best price first
+  const [isAnnual, setIsAnnual] = useState(true);
 
-  // Data derived strictly from your screenshot
   const plans: planType[] = [
     {
       title: "Standard",
       description:
         "Perfect for small businesses creating multiple tours and scenes",
-      // Annual: $19.99/yr / 12 = $1.67/mo. Monthly: $5.99
+      // === STANDARD TIER DATA (From Screenshot) ===
+      // Annual: $19.99/yr ($1.67/mo). Savings: 72% OFF vs Monthly ($5.99/mo)
+      // Monthly: $5.99/mo. Regular: $7.99/mo. Savings: 13% OFF
       price: isAnnual ? "$1.67" : "$5.99",
-      // Annual Reg: $49.99/yr ($4.16/mo). Monthly Reg: $7.99
-      originalPrice: isAnnual ? "$4.17" : "$7.99",
-      discountBadge: isAnnual ? "60% OFF" : "25% OFF", // Math: 5.99 is ~25% off 7.99
+
+      // Annual Anchor: Comparing against Monthly Promo ($5.99) shows the 72% savings
+      // Monthly Anchor: Comparing against Regular Monthly ($7.99) shows 13% savings
+      originalPrice: isAnnual ? "$5.99" : "$7.99",
+
+      // Exact percentages from the screenshot summary lines
+      discountBadge: isAnnual ? "72% OFF" : "13% OFF",
+
       period: "/ month",
       billingFootnote: isAnnual ? "Billed $19.99 yearly" : "Billed monthly",
       trialPeriod: "14 days - Free Trial",
@@ -52,11 +58,18 @@ const Pricing = () => {
       title: "Pro",
       description:
         "Unlock unlimited potential for agencies, photographers, and growing businesses.",
-      // Annual: $69.99/yr / 12 = $5.83/mo. Monthly: $9.99
+      // === PRO TIER DATA (From Screenshot) ===
+      // Annual: $69.99/yr ($5.83/mo). Savings: 42% OFF vs Monthly ($9.99/mo)
+      // Monthly: $9.99/mo. Regular: $11.99/mo. Savings: 17% OFF
       price: isAnnual ? "$5.83" : "$9.99",
-      // Annual Reg: $99.99/yr ($8.33/mo). Monthly Reg: $11.99
-      originalPrice: isAnnual ? "$8.33" : "$11.99",
-      discountBadge: isAnnual ? "30% OFF" : "17% OFF",
+
+      // Annual Anchor: Comparing against Monthly Promo ($9.99) shows the 42% savings
+      // Monthly Anchor: Comparing against Regular Monthly ($11.99) shows 17% savings
+      originalPrice: isAnnual ? "$9.99" : "$11.99",
+
+      // Exact percentages from the screenshot summary lines
+      discountBadge: isAnnual ? "42% OFF" : "17% OFF",
+
       period: "/ month",
       billingFootnote: isAnnual ? "Billed $69.99 yearly" : "Billed monthly",
       trialPeriod: "7 days - Free Trial",
@@ -73,11 +86,11 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-24 font-['Poppins']">
+    <section className="bg-gray-50 py-22 font-['Poppins']">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-5 tracking-tight">
             Simple Pricing, <br />
             <span className="text-[#2A74ED]">Maximum ROI.</span>
           </h2>
@@ -88,7 +101,7 @@ const Pricing = () => {
         </div>
 
         {/* Toggle Switch */}
-        <div className="flex justify-center items-center mb-16 space-x-4">
+        <div className="flex justify-center items-center mb-14 space-x-4">
           <span
             className={`text-base font-medium ${
               !isAnnual ? "text-gray-900" : "text-gray-500"
@@ -114,24 +127,23 @@ const Pricing = () => {
             }`}
           >
             Annual
-            {/* Psychological Trigger: Highlight the Massive 72% Savings from screenshot */}
-            <span className="text-[#2A74ED] text-xs font-bold ml-2 bg-blue-50 border border-blue-100 px-2 py-1 rounded-full animate-pulse">
+            <span className="text-[#2A74ED] text-[11px] font-bold ml-2 bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full animate-pulse">
               Save up to 72%
             </span>
           </span>
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-start relative max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <PricingCard key={index} plan={plan} />
           ))}
         </div>
 
-        {/* Guarantee / Trust Footer */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
-            <AlertCircle size={16} />
+        {/* Footer */}
+        <div className="mt-14 text-center">
+          <p className="text-gray-400 text-xs flex items-center justify-center gap-2">
+            <AlertCircle size={15} />
             All plans come with a money-back guarantee. No credit card required
             for trial.
           </p>
@@ -161,7 +173,6 @@ const PricingCard = ({ plan }: { plan: planType }) => {
 
   const isStandard = title === "Standard";
 
-  // Dynamic Styles
   const iconColor = isStandard
     ? "text-green-500 fill-green-500"
     : "text-[#2A74ED] fill-[#2A74ED]";
@@ -170,25 +181,28 @@ const PricingCard = ({ plan }: { plan: planType }) => {
     ? "from-green-600 to-teal-500"
     : "from-[#2A74ED] to-indigo-500";
   const priceColor = isStandard ? "text-gray-900" : "text-[#2A74ED]";
+  const badgeColor = isStandard
+    ? "bg-green-100 text-green-700"
+    : "bg-blue-100 text-blue-700";
 
   return (
     <div
-      className={`bg-white rounded-[2rem] p-8 relative flex flex-col h-full transition-all duration-300 ${
+      className={`bg-white rounded-[1.8rem] p-7 relative flex flex-col h-full transition-all duration-300 ${
         isPopular
-          ? "border-2 border-[#2A74ED] shadow-2xl scale-105 z-10"
+          ? "border-2 border-[#2A74ED] shadow-xl scale-[1.02] z-10"
           : "border border-gray-200 hover:border-gray-300 hover:shadow-lg"
       }`}
     >
       {isPopular && (
         <div className="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
-          <span className="bg-[#2A74ED] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
+          <span className="bg-[#2A74ED] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
             Most Popular
           </span>
         </div>
       )}
 
       {/* Header Image */}
-      <div className="mb-6 flex justify-center h-20 items-center">
+      <div className="mb-5 flex justify-center h-18 items-center">
         <img
           src={headerImage}
           alt={title}
@@ -198,27 +212,27 @@ const PricingCard = ({ plan }: { plan: planType }) => {
 
       <div className="flex-grow">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-500 mb-4 text-sm leading-relaxed min-h-[40px]">
+        <p className="text-gray-500 mb-5 text-sm leading-relaxed min-h-[40px]">
           {description}
         </p>
 
-        {/* Pricing Area - Psychological Layout */}
-        <div className="mb-8">
+        {/* Pricing Area */}
+        <div className="mb-7">
           {/* Trial Label */}
           {trialPeriod && (
-            <div className="mb-4 relative w-fit">
+            <div className="mb-3 relative w-fit">
               <span className="relative flex items-center">
                 <Sparkles
-                  className={`w-4 h-4 mr-2 animate-pulse ${iconColor}`}
+                  className={`w-3.5 h-3.5 mr-1.5 animate-pulse ${iconColor}`}
                 />
-                <span className="text-gray-600 font-bold text-sm tracking-tight uppercase mr-1">
+                <span className="text-gray-600 font-bold text-xs tracking-tight uppercase mr-1">
                   {trialPeriod.split(" - ")[0]}
                 </span>
                 <span
-                  className={`mx-1.5 w-1 h-1 rounded-full ${dotColor}`}
+                  className={`mx-1 w-1 h-1 rounded-full ${dotColor}`}
                 ></span>
                 <span
-                  className={`font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${gradientText} uppercase tracking-wide`}
+                  className={`font-extrabold text-xs text-transparent bg-clip-text bg-gradient-to-r ${gradientText} uppercase tracking-wide`}
                 >
                   Free Trial
                 </span>
@@ -230,36 +244,32 @@ const PricingCard = ({ plan }: { plan: planType }) => {
             <div className="flex items-end flex-wrap gap-2 mb-1">
               {/* Main Price */}
               <span
-                className={`text-5xl font-bold ${priceColor} tracking-tight`}
+                className={`text-5xl font-bold ${priceColor} tracking-tight leading-none`}
               >
                 {price}
               </span>
 
-              <div className="flex flex-col mb-1.5">
-                {/* Original Price (Strikethrough) - Anchoring Effect */}
+              <div className="flex flex-col mb-1">
+                {/* Anchor Price (Strikethrough) */}
                 <span className="text-gray-400 text-sm font-medium line-through decoration-gray-400/60">
                   {originalPrice}
                 </span>
-                <span className="text-gray-500 font-medium text-sm">
+                <span className="text-gray-500 font-medium text-xs">
                   {period}
                 </span>
               </div>
 
               {/* Discount Badge */}
               <span
-                className={`ml-auto mb-2 text-xs font-bold px-2 py-1 rounded-lg ${
-                  isStandard
-                    ? "bg-green-100 text-green-700"
-                    : "bg-blue-100 text-blue-700"
-                }`}
+                className={`ml-auto mb-2 text-[11px] font-bold px-2 py-0.5 rounded-md ${badgeColor}`}
               >
                 {discountBadge}
               </span>
             </div>
 
-            {/* Billed Yearly Footnote - Crucial for transparency while keeping main price low */}
+            {/* Billed Yearly Footnote */}
             {billingFootnote && (
-              <p className="text-xs text-gray-400 font-medium pl-1">
+              <p className="text-[11px] text-gray-400 font-medium pl-1">
                 {billingFootnote}
               </p>
             )}
@@ -267,11 +277,11 @@ const PricingCard = ({ plan }: { plan: planType }) => {
         </div>
 
         {/* Features List */}
-        <ul className="space-y-4 mb-8 border-t border-gray-100 pt-6">
+        <ul className="space-y-3.5 mb-7 border-t border-gray-100 pt-5">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start text-gray-700">
               <div
-                className={`mt-0.5 p-0.5 rounded-full mr-3 flex-shrink-0 ${
+                className={`mt-0.5 p-0.5 rounded-full mr-2.5 flex-shrink-0 ${
                   feature.included
                     ? isPopular
                       ? "bg-[#2A74ED]/10 text-[#2A74ED]"
@@ -280,9 +290,9 @@ const PricingCard = ({ plan }: { plan: planType }) => {
                 }`}
               >
                 {feature.included ? (
-                  <Check size={14} strokeWidth={3} />
+                  <Check size={13} strokeWidth={3} />
                 ) : (
-                  <X size={14} strokeWidth={3} />
+                  <X size={13} strokeWidth={3} />
                 )}
               </div>
               <span
@@ -301,7 +311,7 @@ const PricingCard = ({ plan }: { plan: planType }) => {
 
       {/* CTA Button */}
       <button
-        className={`w-full py-4 rounded-xl font-semibold flex items-center justify-center transition-all duration-300 ${
+        className={`w-full py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center transition-all duration-300 ${
           isPopular
             ? "bg-[#2A74ED] text-white hover:bg-[#1a5fc7] shadow-lg shadow-blue-500/30"
             : "bg-[#1A1A1A] text-white hover:bg-black"
