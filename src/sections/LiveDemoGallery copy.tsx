@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 // 1. Types
 interface DemoItem {
@@ -12,8 +13,10 @@ interface DemoItem {
 
 const LiveDemoGallery = () => {
   const [activeTab, setActiveTab] = useState<string>("Real Estate");
-
+  
   // Controls the visual fade state
+  // true = iframe hidden / loader showing
+  // false = iframe showing / loader hidden
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
   const demos: DemoItem[] = [
@@ -42,39 +45,41 @@ const LiveDemoGallery = () => {
 
   const activeDemo = demos.find((d) => d.category === activeTab) || demos[0];
 
-  // 2. The Synchronized Animation Logic (Kept exactly as before)
+  // 2. The Synchronized Animation Logic
   const handleTabChange = (category: string) => {
     if (category === activeTab || isTransitioning) return;
 
     // Phase 1: Fade OUT existing content & Fade IN preloader
     setIsTransitioning(true);
 
-    // Phase 2: Wait 500ms for opacity to hit 0
+    // Phase 2: Wait 500ms (matches CSS transition duration) for opacity to hit 0
     setTimeout(() => {
-      // NOW switch the data
+      // NOW switch the data while it is invisible
       setActiveTab(category);
 
-      // Phase 3: Wait remaining time to simulate smooth loading
+      // Phase 3: Wait remaining time (1.5s) to simulate smooth loading
       setTimeout(() => {
         // Phase 4: Fade IN new content & Fade OUT preloader
         setIsTransitioning(false);
       }, 1500);
+
     }, 500);
   };
 
+  // AI SEO Data
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: `Virtual Tour: ${activeDemo.title}`,
-    applicationCategory: "MultimediaApplication",
-    operatingSystem: "Web",
-    description: activeDemo.description,
-    url: activeDemo.embedUrl,
-    offers: { "@type": "Offer", category: activeDemo.category },
-    hasPart: {
+    "name": `Virtual Tour: ${activeDemo.title}`,
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "description": activeDemo.description,
+    "url": activeDemo.embedUrl,
+    "offers": { "@type": "Offer", "category": activeDemo.category },
+    "hasPart": {
       "@type": "VisualArtwork",
-      artMedium: "3D Virtual Tour",
-      name: activeDemo.title,
+      "artMedium": "3D Virtual Tour",
+      "name": activeDemo.title,
     },
   };
 
@@ -86,20 +91,20 @@ const LiveDemoGallery = () => {
       />
 
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+        
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A] mb-6">
             Interactive <span className="text-[#2A74ED]">Virtual Tours</span>
           </h2>
           <p className="text-gray-500 text-lg">
-            Explore our immersive 3D environments for Real Estate, Hospitality,
-            and Retail directly in your browser.
+            Explore our immersive 3D environments for Real Estate, Hospitality, and Retail directly in your browser.
           </p>
         </div>
 
         {/* Controls */}
         <div className="flex justify-center mb-8">
-          <div className="flex md:mr-auto p-1 bg-gray-100 rounded-xl shadow-inner">
+          <div className="flex p-1 bg-gray-100 rounded-xl shadow-inner">
             {demos.map((demo) => (
               <button
                 key={demo.id}
@@ -117,59 +122,40 @@ const LiveDemoGallery = () => {
         </div>
 
         {/* Main Display Window */}
-        <div className="relative w-full aspect-video md:aspect-[21/9]  rounded-2xl overflow-hidden shadow-2xl border border-gray-100 group">
-          <div
-            className={`absolute inset-0 z-30 flex items-center justify-center bg-[#e7f6f26e] backdrop-blur-md transition-opacity duration-500 ease-in-out ${
-              isTransitioning
-                ? "opacity-100 visible"
-                : "opacity-0 invisible pointer-events-none"
-            }`}
-          >
-            <div 
-            className={`absolute  inset-0 z-30 flex items-center justify-center bg-base/80 backdrop-blur-md shadow-sm transition-all duration-500 ease-in-out ${
+        <div className="relative w-full aspect-video md:aspect-[21/9] bg-gray-900 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 group">
+          
+          {/* ================================================================================== */}
+          {/* SIMPLE PRELOADER (Centered, Clean Background)                                     */}
+          {/* ================================================================================== */}
+          <div 
+            className={`absolute inset-0 z-30 flex items-center justify-center transition-opacity duration-500 ease-in-out ${
               isTransitioning ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
             }`}
           >
-            
-            {/* The Loader Pill: Clean White with Soft Shadow */}
-            <div className=" px-8 py-4 rounded-full flex items-center ">
-               
-               {/* The Dots: Using your Primary Brand Color (#4888e8) for the accent */}
-               <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-[#4888e8] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                  <div className="w-3 h-3 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                  <div className="w-3 h-3 bg-[#4888e8] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-               </div>
-
-               {/* Optional: Subtle Text */}
-               {/* <span className="text-gray-400 text-xs font-semibold tracking-widest uppercase">
-                  Loading
-               </span> */}
-
+            {/* Simple Pill Background as requested */}
+            <div className="bg-[#1A1A1A] px-6 py-3 rounded-full flex items-center gap-3 shadow-xl border border-white/10 transform scale-110">
+               <Loader2 className="text-[#2A74ED] animate-spin" size={20} />
+               <span className="text-white font-medium text-sm tracking-wide">Loading Experience...</span>
             </div>
           </div>
-          </div>
 
+          {/* ================================================================================== */}
+          {/* THE IFRAME (Fades In/Out)                                                         */}
+          {/* ================================================================================== */}
           <iframe
-            key={activeTab}
+            key={activeTab} // Force refresh on change
             src={activeDemo.embedUrl}
             title={`${activeDemo.title} - Virtual Tour`}
             className={`w-full h-full border-0 transition-opacity duration-500 ease-in-out ${
-              isTransitioning ? "opacity-0" : "opacity-100"
+                isTransitioning ? "opacity-0" : "opacity-100"
             }`}
             allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
             loading="lazy"
           />
 
-          {/* Caption Overlay */}
-          {/* <div
-            className={`absolute bottom-17 left-3 z-20 transition-all duration-500 ${
-              isTransitioning
-                ? "opacity-0 translate-y-4"
-                : "opacity-100 translate-y-0"
-            }`}
-          >
-            <div className="bg-blue-500/30 backdrop-blur-xl border border-white/20 p-5 rounded-2xl shadow-lg max-w-sm">
+          {/* Caption Overlay (Fades slightly with the transition) */}
+          <div className={`absolute bottom-6 left-6 z-20 transition-all duration-500 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-5 rounded-2xl shadow-lg max-w-sm">
               <h3 className="text-xl font-bold text-white mb-1 drop-shadow-md">
                 {activeDemo.title}
               </h3>
@@ -177,8 +163,8 @@ const LiveDemoGallery = () => {
                 {activeDemo.description}
               </p>
             </div>
+          </div>
 
-          </div> */}
         </div>
       </div>
     </section>
