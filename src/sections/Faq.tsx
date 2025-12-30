@@ -68,11 +68,10 @@ export default function Faq() {
                 </h3>
                 <h1 className="text-3xl md:text-5xl font-bold text-[#1A1A1A] leading-tight">
                   Got Questions? <br />
-                  <span className="text-[#2A74ED]">We have answers.</span>
+                  <span className="text-[#2A74ED]">We have answers</span>
                 </h1>
                 <p className="text-gray-500 text-lg max-w-sm">
-                  Everything you need to know about building spatial tours on
-                  WordPress.
+                  Everything you need to know about building spatial tours on WordPress
                 </p>
               </div>
             </div>

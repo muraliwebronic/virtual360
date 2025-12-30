@@ -39,8 +39,8 @@ const HeroSection = () => {
 
             {/* Subtext */}
             <p className="text-base md:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Create professional virtual tours in WordPress instantly. 
-              Export spatial-ready assets for Apple Vision Pro and Meta Quest without writing a single line of code.
+              Create professional virtual tours in WordPress instantly
+              Export spatial-ready assets for Apple Vision Pro and Meta Quest without writing a single line of code
             </p>
 
             {/* CTA Buttons */}

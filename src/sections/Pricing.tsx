@@ -57,7 +57,7 @@ const Pricing = () => {
     {
       title: "Pro",
       description:
-        "Unlock unlimited potential for agencies, photographers, and growing businesses.",
+        "Unlock unlimited potential for agencies, photographers, and growing businesses",
       // === PRO TIER DATA (From Screenshot) ===
       // Annual: $69.99/yr ($5.83/mo). Savings: 42% OFF vs Monthly ($9.99/mo)
       // Monthly: $9.99/mo. Regular: $11.99/mo. Savings: 17% OFF
@@ -91,12 +91,12 @@ const Pricing = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-5 tracking-tight">
-            Simple Pricing, <br />
-            <span className="text-[#2A74ED]">Maximum ROI.</span>
+            Simple Pricing <br />
+            <span className="text-[#2A74ED]">Maximum ROI</span>
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
             Whether you are a freelancer or an XR studio, we have a plan that
-            pays for itself with just one client project.
+            pays for itself with just one client project
           </p>
         </div>
 

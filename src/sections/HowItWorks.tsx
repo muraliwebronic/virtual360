@@ -33,8 +33,7 @@ const HowItWorks = () => {
           How It <span className="text-grad-primary">Works</span>
         </h2>
         <p className="text-gray-600 text-lg md:text-xl font-medium leading-relaxed">
-          Create stunning virtual tours in just 3 simple steps. No technical
-          skills required.
+          Create stunning virtual tours in just 3 simple steps. No technical skills required
         </p>
       </div>
 

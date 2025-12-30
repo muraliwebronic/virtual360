@@ -9,25 +9,25 @@ const USPShowcase = () => {
     {
       id: "workflow",
       title: "Clean UI & Simple Workflow",
-      description: "Drag, drop, and link scenes in minutes. Our no-code editor is designed for speed, not complexity.",
+      description: "Drag, drop, and link scenes in minutes. Our no-code editor is designed for speed, not complexity",
       icon: <Monitor size={20} />,
-      visual: "./Icons/360 Tour Website/Group 2586.png", // Represents the Editor/Web View
+      visual: "./image/image (4).png", // Represents the Editor/Web View
       tag: "Web Editor",
     },
     {
       id: "embed",
       title: "Fast Embedding",
-      description: "No heavy iframes or complex setups. Just copy one shortcode and your tour is live on WordPress.",
+      description: "No heavy iframes or complex setups. Just copy one shortcode and your tour is live on WordPress",
       icon: <Copy size={20} />,
-      visual: "./Icons/360 Tour Website/Group 2586.png", // Represents the Link/Embed action
+      visual: "./image/image (5).png", // Represents the Link/Embed action
       tag: "WordPress Ready",
     },
     {
       id: "spatial",
       title: "360° → VR-Ready Pipeline",
-      description: "The only plugin that automatically converts your web tours into spatial assets for Apple Vision Pro.",
+      description: "The only plugin that automatically converts your web tours into spatial assets for Apple Vision Pro",
       icon: <Glasses size={20} />,
-      visual: "./Icons/360 Tour Website/Group 2584.png", // Represents the VR/Spatial View
+      visual: "./image/image (6).png", // Represents the VR/Spatial View
       tag: "Vision Pro Ready",
     },
   ];
@@ -38,10 +38,10 @@ const USPShowcase = () => {
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-20">
         <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A] mb-6 tracking-tight">
-          One Workflow. <span className="text-[#2A74ED]">Dual Output.</span>
+          One Workflow <span className="text-[#2A74ED]">Dual Output</span>
         </h2>
         <p className="text-gray-500 text-lg leading-relaxed">
-          Bridge the gap between traditional web and the spatial web. Build once, deploy everywhere.
+          Bridge the gap between traditional web and the spatial web. Build once, deploy everywhere
         </p>
       </div>
 

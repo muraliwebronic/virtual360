@@ -52,7 +52,7 @@ const Features = () => {
           </div>
           <div className="max-w-lg lg:text-right lg:pb-2">
             <p className="text-gray-500 text-lg leading-relaxed font-medium">
-              Create immersive virtual tours that engage your audience and showcase your spaces like never before.
+              Create immersive virtual tours that engage your audience and showcase your spaces like never before
             </p>
           </div>
         </div>

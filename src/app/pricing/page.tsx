@@ -6,7 +6,10 @@ import React from 'react'
 export default function page() {
   return (
     <>
-    <Pricing />
+    <section id='plans'>
+       <Pricing />
+    </section>
+   
     <FeatureComparison />
     <Faq />
     </>

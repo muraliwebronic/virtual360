@@ -56,7 +56,7 @@ const LiveDemoGallery = () => {
             Experience the <span className="text-[#2A74ED]">Difference</span>
           </h2>
           <p className="text-gray-500 text-lg">
-            Switch between standard Web view and our exclusive Spatial Mode to see what your users will experience.
+            Switch between standard Web view and our exclusive Spatial Mode to see what your users will experience
           </p>
         </div>
 
