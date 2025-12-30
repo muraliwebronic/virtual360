@@ -15,12 +15,7 @@
   --secondary-fade: #65ee7c2e;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 @theme {
   /* Font Config */
