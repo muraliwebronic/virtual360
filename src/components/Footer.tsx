@@ -79,7 +79,7 @@ const Footer = () => {
             </Link>
             <p className="text-gray-500 mb-8 max-w-sm leading-relaxed text-sm">
               The only WordPress plugin designed for the Spatial Web. Build
-              once, deploy to Mobile, Desktop, and Apple Vision Pro.
+              once, deploy to Mobile, Desktop, and Apple Vision Pro
             </p>
 
             {/* Social Icons */}
