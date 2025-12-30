@@ -100,13 +100,13 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-[#1A1A1A] mb-2">Product</h4>
             {footerLinks.product.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm text-gray-500 hover:text-[#2A74ED] transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
