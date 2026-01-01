@@ -34,7 +34,7 @@ const Footer = () => {
   return (
     <footer className="bg-white font-['Poppins'] text-[#1A1A1A] pt-24 pb-12 relative overflow-hidden border-t border-gray-100">
       {/* Background Decor (Subtle Blue Gradient) */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-50 to-transparent opacity-50 blur-3xl rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-linear-to-br from-blue-50 to-transparent opacity-50 blur-3xl rounded-full pointer-events-none -z-10" />
 
       <div className="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Top Section: CTA & Newsletter */}

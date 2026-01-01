@@ -3,8 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-// 1. Define your base domain for SEO images to work correctly
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.your-domain.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://wplicense.webronics.com/";
 
 export const viewport: Viewport = {
   themeColor: "#e7f6f26e",

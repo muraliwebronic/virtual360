@@ -86,7 +86,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-22 font-['Poppins']">
+    <section className="bg-gray-50  py-22 font-['Poppins']">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -103,36 +103,39 @@ const Pricing = () => {
         {/* Toggle Switch */}
         {/* Toggle Switch Container */}
         <div className="flex justify-center items-center mb-16 space-x-4">
-          
           {/* Monthly Label */}
-          <span className={`text-sm  font-medium transition-colors duration-300 ${
-            !isAnnual ? 'text-[#2A74ED] font-bold' : 'text-gray-500'
-          }`}>
+          <span
+            className={`text-sm  font-medium transition-colors duration-300 ${
+              !isAnnual ? "text-[#2A74ED] font-bold" : "text-gray-500"
+            }`}
+          >
             Monthly
           </span>
-          
+
           <button
             onClick={() => setIsAnnual(!isAnnual)}
             className={`relative w-14 h-7 sm:w-16 sm:h-8 rounded-full p-1 transition-colors duration-300 focus:outline-none flex-shrink-0 cursor-pointer ${
-              isAnnual ? 'bg-[#2A74ED]' : 'bg-gray-200'
+              isAnnual ? "bg-[#2A74ED]" : "bg-gray-200"
             }`}
           >
             <div
               className={`w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
-                isAnnual ? 'translate-x-7 sm:translate-x-8' : 'translate-x-0'
+                isAnnual ? "translate-x-7 sm:translate-x-8" : "translate-x-0"
               }`}
             />
           </button>
-          
+
           {/* Annual Label Wrapper */}
           <div className="relative flex items-center">
             {/* Annual Label */}
-            <span className={`text-sm  font-medium transition-colors duration-300 ${
-              isAnnual ? 'text-[#2A74ED] font-bold' : 'text-gray-500'
-            }`}>
+            <span
+              className={`text-sm  font-medium transition-colors duration-300 ${
+                isAnnual ? "text-[#2A74ED] font-bold" : "text-gray-500"
+              }`}
+            >
               Annual
             </span>
-            
+
             {/* Badge Positioned Below Text on Mobile */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-max sm:static sm:translate-x-0 sm:mt-0 sm:ml-2">
               <span className="relative block text-[#2A74ED] text-[10px] sm:text-[11px] font-bold bg-blue-50 border border-blue-100 px-2 sm:px-2.5 py-0.5 rounded-full animate-pulse">
@@ -228,7 +231,6 @@ const PricingCard = ({ plan }: { plan: planType }) => {
         </p>
 
         <div className="mb-8 font-['Poppins'] ">
-          
           {/* Trial Label */}
           {trialPeriod && (
             <div className="mb-2 relative w-fit">
@@ -258,9 +260,7 @@ const PricingCard = ({ plan }: { plan: planType }) => {
             >
               {price}
             </span>
-            <span className="text-gray-500 font-medium text-sm">
-              {period}
-            </span>
+            <span className="text-gray-500 font-medium text-sm">{period}</span>
           </div>
 
           {/* Original Price & Badge (Row Aligned) */}

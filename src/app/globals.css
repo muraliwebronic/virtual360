@@ -207,3 +207,12 @@ body {
 .rotate-y-6 {
   transform: rotateY(-6deg) rotateX(2deg);
 }
+
+
+@layer components {
+  .form-input-custom {
+    @apply w-full px-6 py-4 rounded-[1.5rem] border border-gray-100 bg-gray-50/50 
+           text-[#1A1A1A] placeholder:text-gray-400 focus:outline-none 
+           focus:border-[#2A74ED] focus:bg-white transition-all shadow-inner;
+  }
+}

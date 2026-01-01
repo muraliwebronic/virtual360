@@ -1,17 +1,36 @@
-import FeatureComparison from '@/components/FeatureComparison'
-import Faq from '@/sections/Faq'
-import Pricing from '@/sections/Pricing'
-import React from 'react'
+import React from "react";
+import Pricing from "@/sections/pricing/Pricing";
+import FeatureComparison from "@/components/FeatureComparison";
+import ROICalculator from "@/sections/pricing/ROICalculator";
+import PricingSocialProof from "@/sections/pricing/PricingSocialProof";
+import Faq from "@/sections/pricing/Faq";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import FinalPricingCTA from "@/sections/pricing/FinalPricingCTA";
 
-export default function page() {
+export default function PricingPage() {
   return (
-    <>
-    <section id='plans'>
-       <Pricing />
-    </section>
-   
-    <FeatureComparison />
-    <Faq />
-    </>
-  )
+    <main className="bg-white">
+      {/* 1. Pricing Plans */}
+      <section id="plans">
+        <Pricing />
+      </section>
+
+      {/* 2. Detailed Feature Comparison */}
+      <FeatureComparison />
+
+      {/* 3. ROI Calculator (The Business Case) */}
+      <ROICalculator />
+
+      {/* 4. Social Proof (Trust Building) */}
+      <PricingSocialProof />
+
+      {/* 5. FAQ (Removing Friction) */}
+      <Faq />
+
+      {/* 6. FINAL CONVERSION CTA */}
+
+     <FinalPricingCTA />
+    </main>
+  );
 }

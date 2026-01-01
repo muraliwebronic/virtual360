@@ -15,6 +15,10 @@ export default function NavBar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
+    // Run once on mount to capture initial position if page is refreshed mid-scroll
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -23,6 +27,7 @@ export default function NavBar() {
     { name: "Home", href: "/" },
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
+    { name: "Resources", href: "/resources" },
   ];
 
   return (
@@ -43,11 +48,9 @@ export default function NavBar() {
           className="flex items-center gap-1.5 group select-none" 
           aria-label="Virtual Tour 360 Home"
         >
-          {/* Virtual Tour: Uses theme primary color */}
           <span className="text-grad-primary font-bold text-2xl tracking-tight group-hover:opacity-90 transition-opacity">
             Virtual Tour
           </span>
-          {/* 360: Uses your custom gradient text utility */}
           <span className="font-extrabold text-2xl ">
             360
           </span>
@@ -64,18 +67,16 @@ export default function NavBar() {
                   href={link.href}
                   className="relative group py-2"
                 >
-                  {/* Text Layer */}
                   <span
                     className={`text-base font-semibold transition-all duration-300 ${
                       isActive
-                        ? "text-grad-primary" // Active: Custom Gradient Utility
-                        : "text-foreground/70 hover:text-primary" // Inactive: Theme Foreground -> Theme Primary
+                        ? "text-grad-primary" 
+                        : "text-foreground/70 hover:text-primary" 
                     }`}
                   >
                     {link.name}
                   </span>
 
-                  {/* Underline Animation (Using custom grad-primary) */}
                   <span
                     className={`absolute left-0 bottom-0 h-[2.5px] rounded-full grad-primary transition-all duration-300 ${
                       isActive ? "w-full" : "w-0 group-hover:w-full"
@@ -89,11 +90,11 @@ export default function NavBar() {
 
         {/* --- CTA Button (Desktop) --- */}
         <div className="hidden md:block">
-          <Link href="/login">
+          <a href="https://wplicense.webronics.com/login-360/">
             <button className="grad-primary hover:grad-secondary text-white px-7 py-2.5 rounded-lg font-medium transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
               Log in
             </button>
-          </Link>
+          </a>
         </div>
 
         {/* --- Mobile Menu Button --- */}
@@ -109,7 +110,7 @@ export default function NavBar() {
 
       {/* --- Mobile Dropdown Menu --- */}
       <div
-        className={`md:hidden ${isScrolled? "bg-white ": ""} absolute top-full left-0 w-full  backdrop-blur-xl border-t border-gray-100/10 shadow-xl transition-all duration-300 ease-in-out origin-top ${
+        className={`md:hidden ${isScrolled ? "bg-white " : ""} absolute top-full left-0 w-full backdrop-blur-xl border-t border-gray-100/10 shadow-xl transition-all duration-300 ease-in-out origin-top ${
           mobileMenuOpen
             ? "opacity-100 scale-y-100 translate-y-0"
             : "opacity-0 scale-y-0 -translate-y-4 pointer-events-none"
@@ -125,7 +126,7 @@ export default function NavBar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block text-lg font-medium px-4 py-3 rounded-lg transition-colors ${
                     isActive
-                      ? "bg-primary/10 text-primary" // Active mobile style using theme colors
+                      ? "bg-primary/10 text-primary" 
                       : "text-foreground/80 hover:bg-base hover:text-primary"
                   }`}
                 >
@@ -136,7 +137,6 @@ export default function NavBar() {
           })}
           <li className="pt-4 mt-2 border-t border-foreground/5">
              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-              {/* Mobile Button using Gradient */}
               <button className="w-full grad-primary hover:grad-secondary text-white py-3.5 rounded-lg font-bold shadow-md active:scale-95 transition-transform">
                 Log in
               </button>

@@ -98,7 +98,7 @@ const LiveDemoGallery = () => {
             Interactive <span className="text-[#2A74ED]">Virtual Tours</span>
           </h2>
           <p className="text-gray-500 text-lg">
-            Explore our immersive 3D environments for Real Estate, Hospitality, and Retail directly in your browser.
+            Explore our immersive 3D environments for Real Estate, Hospitality, and Retail directly in your browser
           </p>
         </div>
 

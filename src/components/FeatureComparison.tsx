@@ -33,13 +33,19 @@ const FeatureComparison = () => {
     },
 
     {
-      name: "Custom Colors",
+      name: "Custom Brand Colors",
       standard: false,
       pro: true,
       highlight: false,
     },
     {
       name: "Typography Controls",
+      standard: false,
+      pro: true,
+      highlight: false,
+    },
+    {
+      name: "White Label Options",
       standard: false,
       pro: true,
       highlight: false,
@@ -69,7 +75,19 @@ const FeatureComparison = () => {
       highlight: false,
     },
     {
-      name: "Full-Screen Mode",
+      name: "Full Screen Mode",
+      standard: true,
+      pro: true,
+      highlight: false,
+    },
+    {
+      name: "Web View Mode",
+      standard: true,
+      pro: true,
+      highlight: false,
+    },
+    {
+      name: "Spatial Mode (Vision Pro & VR)",
       standard: true,
       pro: true,
       highlight: false,

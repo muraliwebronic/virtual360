@@ -141,10 +141,6 @@ const LiveDemoGallery = () => {
                   <div className="w-3 h-3 bg-[#4888e8] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                </div>
 
-               {/* Optional: Subtle Text */}
-               {/* <span className="text-gray-400 text-xs font-semibold tracking-widest uppercase">
-                  Loading
-               </span> */}
 
             </div>
           </div>
@@ -161,24 +157,7 @@ const LiveDemoGallery = () => {
             loading="lazy"
           />
 
-          {/* Caption Overlay */}
-          {/* <div
-            className={`absolute bottom-17 left-3 z-20 transition-all duration-500 ${
-              isTransitioning
-                ? "opacity-0 translate-y-4"
-                : "opacity-100 translate-y-0"
-            }`}
-          >
-            <div className="bg-blue-500/30 backdrop-blur-xl border border-white/20 p-5 rounded-2xl shadow-lg max-w-sm">
-              <h3 className="text-xl font-bold text-white mb-1 drop-shadow-md">
-                {activeDemo.title}
-              </h3>
-              <p className="text-white/80 text-sm font-light leading-relaxed">
-                {activeDemo.description}
-              </p>
-            </div>
-
-          </div> */}
+        
         </div>
       </div>
     </section>
