@@ -22,7 +22,7 @@ const Footer = () => {
     ],
     resources: [
       { name: "Documentation", href: "#" },
-      { name: "API Reference", href: "#" },
+      // { name: "API Reference", href: "#" },
     ],
     company: [
       { name: "Terms & Conditions", href: "/terms-and-conditions" },
@@ -62,7 +62,7 @@ const Footer = () => {
         </div>
 
         {/* Middle Section: Links Grid - UPDATED GRID LOGIC */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-20">
           
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-2">
@@ -136,7 +136,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info - FIXED FOR MOBILE */}
-          <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
+          <div className="flex flex-col gap-4  ">
             <h4 className="font-bold text-[#1A1A1A] mb-2">Get in Touch</h4>
             <div className="flex flex-col gap-5 text-sm text-gray-500">
               
@@ -152,9 +152,9 @@ const Footer = () => {
               {/* Email */}
               <a 
                 href="mailto:kontakt@thingsatweb.se" 
-                className="flex items-center gap-3 hover:text-[#2A74ED] transition-colors group break-all"
+                className="flex items-center gap-3 hover:text-[#2A74ED] transition-colors "
               >
-                <Mail className="w-5 h-5 text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
+                <Mail className=" text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
                 <span>kontakt@thingsatweb.se</span>
               </a>
 
@@ -163,7 +163,7 @@ const Footer = () => {
                 href="tel:+46707770727" 
                 className="flex items-center gap-3 hover:text-[#2A74ED] transition-colors group"
               >
-                <Phone className="w-5 h-5 text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
+                <Phone className=" text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
                 <span>+46 70 777 07 27</span>
               </a>
             </div>

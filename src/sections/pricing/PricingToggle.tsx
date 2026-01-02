@@ -22,7 +22,7 @@ export type planType = {
 };
 
 const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [isAnnual, setIsAnnual] = useState(true);
 
    const plans: planType[] = [
       {
@@ -102,7 +102,8 @@ const Pricing = () => {
 
         {/* Toggle Switch */}
         {/* Toggle Switch Container */}
-        {/* <div className="flex justify-center items-center mb-16 space-x-4">
+        <div className="flex justify-center items-center mb-16 space-x-4">
+          {/* Monthly Label */}
           <span
             className={`text-sm  font-medium transition-colors duration-300 ${
               !isAnnual ? "text-[#2A74ED] font-bold" : "text-gray-500"
@@ -124,7 +125,9 @@ const Pricing = () => {
             />
           </button>
 
+          {/* Annual Label Wrapper */}
           <div className="relative flex items-center">
+            {/* Annual Label */}
             <span
               className={`text-sm  font-medium transition-colors duration-300 ${
                 isAnnual ? "text-[#2A74ED] font-bold" : "text-gray-500"
@@ -133,16 +136,18 @@ const Pricing = () => {
               Annual
             </span>
 
+            {/* Badge Positioned Below Text on Mobile */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-max sm:static sm:translate-x-0 sm:mt-0 sm:ml-2">
               <span className="relative block text-[#2A74ED] text-[10px] sm:text-[11px] font-bold bg-blue-50 border border-blue-100 px-2 sm:px-2.5 py-0.5 rounded-full animate-pulse">
                 Save up to 72%
+                {/* Mobile Arrow */}
                 <span className="sm:hidden absolute -top-1 left-1/2 -translate-x-1/2 border-l-4 border-l-transparent border-r-4 border-r-transparent border-b-4 border-b-blue-100"></span>
               </span>
             </div>
           </div>
-        </div> */}
+        </div>
 
-
+        {/* Pricing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-start relative max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <PricingCard key={index} plan={plan} />
