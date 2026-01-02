@@ -3,7 +3,8 @@ import { faqData } from "@/app/pricing/data/pricingFAQData";
 import FaqItem from "@/components/common/FaqItem";
 import React, { useState } from "react";
 import Link from "next/link"; // Added Import
-import { ArrowRight } from "lucide-react"; // Added Import
+import { ArrowRight, HelpCircle } from "lucide-react"; // Added Import
+import ActionButton from "@/components/ui/ActionButtons";
 
 export default function Faq() {
   const [openFaqs, setOpenFaqs] = useState<number[]>([0]); 
@@ -37,13 +38,11 @@ export default function Faq() {
                 </p>
 
                 {/* Quick Link Added Here */}
-                <Link 
-                  href="/faq" 
-                  className="group flex items-center gap-2 text-[#2A74ED] font-semibold  hover:underline decoration-2 underline-offset-4 transition-all"
-                >
-                  <span>View additional billing & technical questions</span>
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <ActionButton 
+    href="/faq" 
+    label="View additional billing & technical questions" 
+    icon={HelpCircle} 
+  />
               </div>
             </div>
           </div>
