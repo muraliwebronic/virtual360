@@ -68,11 +68,11 @@ export default function ContactPage() {
       {/* 4. ENTERPRISE CTA (Consistency: Rounded Card) */}
       <section className="py-24 container max-w-7xl mx-auto px-6">
         <div className="bg-white border border-gray-100 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 shadow-sm">
-          <div className="flex-grow text-center lg:text-left">
+          <div className="grow text-center lg:text-left">
             <h3 className="text-3xl font-bold mb-4">Enterprise & Custom Solutions</h3>
             <p className="text-gray-500 max-w-2xl">Large organization with specific requirements? We offer dedicated account management, SLAs, and white-label options.</p>
           </div>
-          <Link href="mailto:sales-360@thingsatweb.com" className="px-10 py-5 bg-[#1A1A1A] text-white rounded-[2rem] font-bold shrink-0 hover:bg-black transition-all">
+          <Link href="mailto:sales-360@thingsatweb.com" className="px-10 py-5 bg-[#1A1A1A] text-white rounded-4xl font-bold shrink-0 hover:bg-black transition-all">
             Contact Enterprise Team
           </Link>
         </div>
@@ -83,10 +83,10 @@ export default function ContactPage() {
         <SectionHeading title="Ready to" highlight="Get Started?" size="large" gradient={true} className="mb-6" />
         <p className="text-gray-600 text-lg mb-12">Start your free trial today and create your first tour in minutes.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Link href="/pricing" className="px-12 py-5 bg-[#2A74ED] text-white rounded-[2rem] font-bold shadow-xl shadow-blue-500/20 hover:bg-[#1a5fc7] transition-all">
+          <Link href="/pricing" className="px-12 py-5 bg-[#2A74ED] text-white rounded-4xl font-bold shadow-xl shadow-blue-500/20 hover:bg-[#1a5fc7] transition-all">
             Start Free Trial
           </Link>
-          <Link href="/pricing" className="px-12 py-5 bg-white border border-gray-200 text-[#1A1A1A] rounded-[2rem] font-bold hover:bg-gray-50 transition-all">
+          <Link href="/pricing" className="px-12 py-5 bg-white border border-gray-200 text-[#1A1A1A] rounded-4xl font-bold hover:bg-gray-50 transition-all">
             View Pricing
           </Link>
         </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
 
 // Reusable Helper Components
 const ContactMethodCard = ({ icon, title, detail }: any) => (
-  <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm text-center">
+  <div className="bg-white p-8 rounded-4xl border border-gray-100 shadow-sm text-center">
     <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-4">{icon}</div>
     <h4 className="font-bold text-[#1A1A1A] mb-1">{title}</h4>
     <p className="text-sm text-gray-500">{detail}</p>
@@ -113,7 +113,7 @@ const DepartmentItem = ({ title, description, email }: any) => (
 );
 
 const ToolLinkCard = ({ icon, title, link }: any) => (
-  <Link href={link} className="bg-white p-8 rounded-[2rem] border border-gray-100 hover:shadow-lg transition-all text-center group">
+  <Link href={link} className="bg-white p-8 rounded-4xl border border-gray-100 hover:shadow-lg transition-all text-center group">
     <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-4 text-[#2A74ED] group-hover:scale-110 transition-transform">
       {icon}
     </div>

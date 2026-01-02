@@ -6,8 +6,8 @@ import {
   Github,
   Mail,
   ArrowRight,
-  MapPin,
-  Phone,
+  MapPin, // Added for Address
+  Phone,  // Added for Phone
 } from "lucide-react";
 import Link from "next/link";
 
@@ -25,14 +25,15 @@ const Footer = () => {
       { name: "API Reference", href: "#" },
     ],
     company: [
-      { name: "Terms & Conditions", href: "/terms-and-conditions" },
+      // Updated links as requested
+      { name: "Terms & Conditions", href: "/terms-and-conditions" }, 
       { name: "Privacy Policy", href: "/privacy-policy" },
     ],
   };
 
   return (
     <footer className="bg-white font-['Poppins'] text-[#1A1A1A] pt-24 pb-12 relative overflow-hidden border-t border-gray-100">
-      {/* Background Decor */}
+      {/* Background Decor (Subtle Blue Gradient) */}
       <div className="absolute top-0 right-0 w-125 h-125 bg-linear-to-br from-blue-50 to-transparent opacity-50 blur-3xl rounded-full pointer-events-none -z-10" />
 
       <div className="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -55,20 +56,20 @@ const Footer = () => {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </Link>
-            <Link href={"#"} className="px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-[#1A1A1A] hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 text-center">
+            <Link href={"#"} className="px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-[#1A1A1A] hover:bg-gray-50 hover:border-gray-300 transition-all duration-300">
               View Documentation
             </Link>
           </div>
         </div>
 
-        {/* Middle Section: Links Grid - UPDATED GRID LOGIC */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
+        {/* Middle Section: Links Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10 mb-20">
           
-          {/* Brand Column */}
-          <div className="sm:col-span-2 lg:col-span-2">
+          {/* Brand Column (Span 2) */}
+          <div className="col-span-2 lg:col-span-2">
             <Link
               href="/"
-              className="flex items-center gap-1.5 group select-none mb-6"
+              className="flex items-center gap-1.5 group select-none"
               aria-label="Virtual Tour 360 Home"
             >
               <span className="text-grad-primary font-bold text-2xl tracking-tight group-hover:opacity-90 transition-opacity">
@@ -135,24 +136,24 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Contact Info - FIXED FOR MOBILE */}
-          <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
+          {/* Contact Info with Icons */}
+          <div className="flex flex-col gap-4">
             <h4 className="font-bold text-[#1A1A1A] mb-2">Get in Touch</h4>
-            <div className="flex flex-col gap-5 text-sm text-gray-500">
+            <div className="flex flex-col gap-4 text-sm text-gray-500">
               
               {/* Address */}
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2A74ED] shrink-0 mt-0.5" />
-                <address className="not-italic leading-relaxed">
-                  Sockerbruksgatan<br /> 
+                <p className="leading-relaxed">
+                  Sockerbruksgatan 
                   753140 Lidköping
-                </address>
+                </p>
               </div>
 
               {/* Email */}
               <a 
                 href="mailto:kontakt@thingsatweb.se" 
-                className="flex items-center gap-3 hover:text-[#2A74ED] transition-colors group break-all"
+                className="flex items-center gap-3 hover:text-[#2A74ED] transition-colors group"
               >
                 <Mail className="w-5 h-5 text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
                 <span>kontakt@thingsatweb.se</span>
@@ -166,12 +167,13 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
                 <span>+46 70 777 07 27</span>
               </a>
+
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        {/* Bottom Section: Copyright */}
+        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-400">
             © {currentYear} Things at Web Sweden AB. All Rights Reserved.
           </p>

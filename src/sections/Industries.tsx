@@ -76,7 +76,7 @@ const IndustriesSection = () => {
               <button
                 key={index}
                 onClick={() => handleCardClick(item.anchor)}
-                className={`group bg-white w-40 md:w-48 h-40 md:h-48 rounded-[24px] 
+                className={`group bg-white w-40 md:w-48 h-40 md:h-48 rounded-3xl
                   shrink-0 flex flex-col items-center justify-center p-4 text-center 
                   border border-gray-50 hover:border-[#2A74ED]/30 
                   shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgb(42,116,237,0.15)] 
