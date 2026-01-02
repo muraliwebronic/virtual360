@@ -19,6 +19,7 @@ export type planType = {
   }[];
   buttonText: string;
   isEnterprise?: boolean;
+  url:string
 };
 
 const Pricing = () => {
@@ -53,6 +54,7 @@ const Pricing = () => {
           { text: "Maximum 1 Site", included: true },
         ],
         buttonText: "Start 14-Day Free Trial",
+        url:"https://wplicense.webronics.com/checkout/?empty-cart&add-to-cart=891"
       },
       {
         title: "Pro",
@@ -82,6 +84,7 @@ const Pricing = () => {
           { text: "Maximum 3 Sites", included: true },
         ],
         buttonText: "Start 7-Day Free Trial",
+        url:"https://wplicense.webronics.com/checkout/?empty-cart&add-to-cart=189"
       },
     ];
 
@@ -313,7 +316,8 @@ const PricingCard = ({ plan }: { plan: planType }) => {
       </div>
 
       {/* CTA Button */}
-      <button
+      <a
+       href={plan.url}
         className={`w-full py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center transition-all duration-300 ${
           isPopular
             ? "bg-[#2A74ED] text-white hover:bg-[#1a5fc7] shadow-lg shadow-blue-500/30"
@@ -321,7 +325,7 @@ const PricingCard = ({ plan }: { plan: planType }) => {
         }`}
       >
         {buttonText}
-      </button>
+      </a>
     </div>
   );
 };
