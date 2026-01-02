@@ -6,7 +6,6 @@ import {
   MessageSquare, BookOpen, Bug, Lightbulb, Calendar 
 } from "lucide-react";
 import Link from "next/link";
-import ContactSection from "@/sections/contact/ContactSection";
 
 export default function ContactPage() {
   return (
@@ -50,7 +49,54 @@ export default function ContactPage() {
       </section>
 
       {/* 2. CONTACT FORM & DEPARTMENTS */}
-        <ContactSection />
+      <section className="py-24 container max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Form Side */}
+          <div className="lg:col-span-7 bg-white border border-gray-100 rounded-[3rem] p-8 md:p-12 shadow-sm">
+            <h3 className="text-2xl font-bold mb-8">Send Us a Message</h3>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Full Name *" required className="form-input-custom" />
+                <input type="email" placeholder="Email Address *" required className="form-input-custom" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Company (Optional)" className="form-input-custom" />
+                <select className="form-input-custom bg-gray-50">
+                  <option>General Inquiry</option>
+                  <option>Technical Support</option>
+                  <option>Billing Question</option>
+                </select>
+              </div>
+              <textarea placeholder="Your Message *" rows={5} required className="form-input-custom resize-none"></textarea>
+              <button className="w-full py-5 bg-[#2A74ED] text-white rounded-[2rem] font-bold text-lg hover:bg-[#1a5fc7] transition-all shadow-lg shadow-blue-500/20">
+                Submit Message
+              </button>
+              <p className="text-center text-xs text-gray-400 font-medium">Response Time: Within 48 Business Hours</p>
+            </form>
+          </div>
+
+          {/* Departments Side */}
+          <div className="lg:col-span-5 space-y-8">
+            <h3 className="text-2xl font-bold mb-8">Department Contacts</h3>
+            <DepartmentItem 
+              title="Sales & Pre-Sales" 
+              description="Questions about plans or custom quotes?"
+              email="sales-360@thingsatweb.com"
+            />
+            <DepartmentItem 
+              title="Technical Support" 
+              description="Help with tour creation or WordPress integration."
+              email="support-360@thingsatweb.com"
+            />
+            <DepartmentItem 
+              title="Partnerships" 
+              description="Reseller and enterprise licensing inquiries."
+              email="sales-360@thingsatweb.com"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* 3. ALTERNATIVE CHANNELS (Grid style) */}
       <section className="py-24 bg-base shadow-inner">

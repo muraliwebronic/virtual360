@@ -29,10 +29,10 @@ const HeroSection = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-[#1A1A1A] leading-[1.3] md:leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-[1.3] md:leading-[1.1] mb-6 tracking-tight">
               The No-Code 360° Builder for <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A74ED] to-[#60a5fa]">
-                WordPress & Vision Pro
+                WordPress , Vision Pro & Meta Quest
               </span>
             </h1>
 
