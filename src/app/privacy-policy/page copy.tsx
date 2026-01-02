@@ -118,10 +118,8 @@ export default function PrivacyPolicy() {
                   Thingsatweb Sweden AB is the controller and responsible for your personal data.
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li><strong>Org Number:</strong> 559299-2241</li>
                   <li><strong>Address:</strong> Sockerbruksgatan 7, 531 40 Lidköping, Sweden</li>
-                  <li><strong>Phone:</strong> +46707770727</li>
-                  <li><strong>Email:</strong> <a href="mailto:kontakt@thingsatweb.se" className="text-primary hover:underline">kontakt@thingsatweb.se</a></li>
+                  <li><strong>Email:</strong> <a href="mailto:support@virtualtour360.ai" className="text-primary hover:underline">support@virtualtour360.ai</a></li>
                   <li><strong>Website:</strong> <a href="https://www.thingsatweb.se" className="text-primary hover:underline">thingsatweb.se</a></li>
                 </ul>
               </div>
@@ -134,7 +132,6 @@ export default function PrivacyPolicy() {
                 <ul className="space-y-2 text-sm">
                   <li><strong>Contact:</strong> Data Protection Officer</li>
                   <li><strong>Email:</strong> <a href="mailto:dpo@thingsatweb.se" className="text-primary hover:underline">dpo@thingsatweb.se</a></li>
-                  <li><strong>Phone:</strong> +46707770727</li>
                   <li><strong>Postal:</strong> DPO, Thingsatweb Sweden AB, Sockerbruksgatan 7, 531 40 Lidköping, Sweden</li>
                 </ul>
               </div>
@@ -451,8 +448,7 @@ export default function PrivacyPolicy() {
                     <address className="not-italic space-y-4 text-sm">
                         <p className="font-bold text-lg">Thingsatweb Sweden AB</p>
                         <p>Sockerbruksgatan 7,<br/>531 40 Lidköping, Sweden</p>
-                        <p>+46707770727</p>
-                        <p><a href="mailto:kontakt@thingsatweb.se" className="underline hover:text-green-200">kontakt@thingsatweb.se</a></p>
+                        <p><a href="mailto:support@virtualtour360.ai" className="underline hover:text-green-200">support@virtualtour360.ai</a></p>
                     </address>
                 </div>
                 <div className="bg-surface border border-gray-200 p-8 rounded-xl">
@@ -460,7 +456,6 @@ export default function PrivacyPolicy() {
                      <address className="not-italic space-y-4 text-sm text-gray-700">
                         <p className="font-bold text-lg text-foreground">DPO</p>
                         <p>Sockerbruksgatan 7,<br/>531 40 Lidköping, Sweden</p>
-                        <p>+46707770727</p>
                         <p><a href="mailto:dpo@thingsatweb.se" className="text-primary font-bold hover:underline">dpo@thingsatweb.se</a></p>
                     </address>
                     <div className="mt-8 pt-6 border-t border-gray-200">

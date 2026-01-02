@@ -294,17 +294,17 @@ const ContactSection: React.FC = () => {
           <DepartmentItem
             title="Sales & Pre-Sales"
             description="Questions about plans or custom quotes?"
-            email="sales-360@thingsatweb.com"
+            email="sales@virtualtour360.ai"
           />
           <DepartmentItem
             title="Technical Support"
             description="Help with tour creation or WordPress integration."
-            email="support-360@thingsatweb.com"
+            email="support@virtualtour360.ai"
           />
           <DepartmentItem
             title="Partnerships"
             description="Reseller and enterprise licensing inquiries."
-            email="sales-360@thingsatweb.com"
+            email="sales@virtualtour360.ai"
           />
         </div>
       </div>

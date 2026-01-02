@@ -28,13 +28,9 @@ export default function ContactPage() {
             <ContactMethodCard 
               icon={<Mail className="text-[#2A74ED]" />} 
               title="Email Us" 
-              detail="kontakt@thingsatweb.se" 
+              detail="support@virtualtour360.ai" 
             />
-            <ContactMethodCard 
-              icon={<Phone className="text-[#2A74ED]" />} 
-              title="Call Us" 
-              detail="+46 70 777 07 27" 
-            />
+       
             <ContactMethodCard 
               icon={<MapPin className="text-[#2A74ED]" />} 
               title="Visit Us" 

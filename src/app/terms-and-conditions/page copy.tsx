@@ -121,7 +121,7 @@ export default function TermsOfService() {
             </p>
             <div className="bg-surface p-6 rounded-lg border-l-4 border-primary mt-6">
               <p className="text-sm text-gray-800 italic">
-                If you do not agree with (or cannot comply with) Agreements, then you may not use the Service, but please let us know by emailing at <a href="mailto:kontakt@thingsatweb.se" className="font-bold">kontakt@thingsatweb.se</a> so we can try to find a solution.
+                If you do not agree with (or cannot comply with) Agreements, then you may not use the Service, but please let us know by emailing at <a href="mailto:support@virtualtour360.ai" className="font-bold">support@virtualtour360.ai</a> so we can try to find a solution.
               </p>
             </div>
           </section>
@@ -130,7 +130,7 @@ export default function TermsOfService() {
           <section id="communications" className="scroll-mt-32">
             <h2 className="font-serif text-3xl md:text-4xl mb-6">2. Communications</h2>
             <p className="text-gray-700 leading-relaxed">
-              By using our Service, you agree to subscribe to newsletters, marketing or promotional materials, and other information we may send. However, you may opt-out of receiving any, or all, of these communications from us by following the unsubscribe link or by emailing at <a href="mailto:kontakt@thingsatweb.se" className="text-primary hover:underline">kontakt@thingsatweb.se</a>.
+              By using our Service, you agree to subscribe to newsletters, marketing or promotional materials, and other information we may send. However, you may opt-out of receiving any, or all, of these communications from us by following the unsubscribe link or by emailing at <a href="mailto:support@virtualtour360.ai" className="text-primary hover:underline">support@virtualtour360.ai</a>.
             </p>
           </section>
 
@@ -212,7 +212,7 @@ export default function TermsOfService() {
                 We respect the intellectual property rights of others. It is our policy to respond to any claim that Content posted on Service infringes on the copyright or other intellectual property rights (“Infringement”) of any person or entity.
               </p>
               <p className="text-gray-600 text-sm">
-                Submit claims via email to <a href="mailto:kontakt@thingsatweb.se" className="text-primary underline">kontakt@thingsatweb.se</a> with the subject line: “Copyright Infringement”.
+                Submit claims via email to <a href="mailto:support@virtualtour360.ai" className="text-primary underline">support@virtualtour360.ai</a> with the subject line: “Copyright Infringement”.
               </p>
             </div>
           </section>
@@ -230,7 +230,7 @@ export default function TermsOfService() {
                 <li>A statement of good faith belief that the use is not authorized.</li>
                 <li>A statement made under penalty of perjury that the information is accurate.</li>
               </ul>
-              <p className="mt-6 text-sm font-bold">Contact Copyright Agent: <a href="mailto:kontakt@thingsatweb.se" className="text-primary">kontakt@thingsatweb.se</a></p>
+              <p className="mt-6 text-sm font-bold">Contact Copyright Agent: <a href="mailto:support@virtualtour360.ai" className="text-primary">support@virtualtour360.ai</a></p>
             </div>
           </section>
 
@@ -312,7 +312,7 @@ export default function TermsOfService() {
             <h2 className="font-serif text-3xl md:text-4xl mb-8">24. Contact Us</h2>
             <div className="bg-primary text-white p-10 rounded-xl shadow-lg">
                 <p className="mb-6 text-lg">Please send your feedback, comments, and requests for technical support by email:</p>
-                <a href="mailto:kontakt@thingsatweb.se" className="font-serif text-3xl md:text-4xl hover:text-green-200 transition-colors">kontakt@thingsatweb.se</a>
+                <a href="mailto:support@virtualtour360.ai" className="font-serif text-3xl md:text-4xl hover:text-green-200 transition-colors">support@virtualtour360.ai</a>
             </div>
           </section>
 

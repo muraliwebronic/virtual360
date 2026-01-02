@@ -152,21 +152,15 @@ const Footer = () => {
 
               {/* Email */}
               <a 
-                href="mailto:kontakt@thingsatweb.se" 
+                href="mailto:support@virtualtour360.ai" 
                 className="flex items-center gap-3 hover:text-[#2A74ED] transition-colors group"
               >
                 <Mail className="w-5 h-5 text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
-                <span>kontakt@thingsatweb.se</span>
+                <span>support@virtualtour360.ai</span>
               </a>
 
               {/* Phone */}
-              <a 
-                href="tel:+46707770727" 
-                className="flex items-center gap-3 hover:text-[#2A74ED] transition-colors group"
-              >
-                <Phone className="w-5 h-5 text-[#2A74ED] shrink-0 group-hover:scale-110 transition-transform" />
-                <span>+46 70 777 07 27</span>
-              </a>
+           
 
             </div>
           </div>

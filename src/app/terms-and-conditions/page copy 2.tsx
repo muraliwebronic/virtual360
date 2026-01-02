@@ -152,7 +152,6 @@ export default function TermsPage() {
                   <p><strong>Things at Web Sweden AB</strong></p>
                   <p>Sockerbruksgatan 7, 531 40 Lidköping, Sweden</p>
                   <p>Email: legal@thingsatweb.com</p>
-                  <p>Phone: +46 70 777 07 27</p>
                </div>
             </div>
           </section>

@@ -58,9 +58,9 @@ const HeroSection = () => {
                     <span className="font-bold text-white sm:text-lg leading-tight tracking-tight">
                       Start Building Free
                     </span>
-                    <span className="text-[10px] sm:text-[11px] font-medium text-white/80 uppercase tracking-wider">
+                    {/* <span className="text-[10px] sm:text-[11px] font-medium text-white/80 uppercase tracking-wider">
                       14-day trial
-                    </span>
+                    </span> */}
                   </div>
                   <ArrowRight
                     size={20}

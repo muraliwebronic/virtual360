@@ -325,12 +325,9 @@ export default function TermsPage() {
                <div className="space-y-2">
                   <p className="flex items-center gap-3 text-sm text-gray-600">
                     <Mail size={16} className="text-[#2A74ED]" /> 
-                    <a href="mailto:legal@thingsatweb.com" className="hover:text-[#2A74ED] transition-colors">legal@thingsatweb.com</a>
+                    <a href="mailto:support@virtualtour360.ai" className="hover:text-[#2A74ED] transition-colors">support@virtualtour360.ai</a>
                   </p>
-                  <p className="flex items-center gap-3 text-sm text-gray-600">
-                    <span className="font-bold text-[#2A74ED]">Phone:</span> 
-                    +46 70 777 07 27
-                  </p>
+      
                </div>
             </div>
           </section>

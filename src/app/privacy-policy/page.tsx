@@ -227,7 +227,7 @@ export default function PrivacyPolicy() {
                ))}
             </ul>
             <p className="text-sm font-medium">
-               To exercise these rights, contact <a href="mailto:legal@thingsatweb.com" className="text-[#2A74ED] hover:underline">legal@thingsatweb.com</a>.
+               To exercise these rights, contact <a href="mailto:support@virtualtour360.ai" className="text-[#2A74ED] hover:underline">support@virtualtour360.ai</a>.
             </p>
             <div className="w-full h-px bg-gray-100 mt-12"></div>
           </section>
@@ -270,7 +270,7 @@ export default function PrivacyPolicy() {
                 <p className="text-sm mb-2 text-gray-600">If you are located in the European Economic Area, we comply with GDPR requirements:</p>
                 <ul className="space-y-2 text-sm">
                    <li>• Legal basis: Contract performance, legitimate interests, consent</li>
-                   <li>• Data protection officer: legal@thingsatweb.com</li>
+                   <li>• Data protection officer: support@virtualtour360.ai</li>
                    <li>• Right to lodge complaints with supervisory authorities</li>
                 </ul>
               </div>
@@ -315,12 +315,9 @@ export default function PrivacyPolicy() {
                <div className="space-y-2">
                   <p className="flex items-center gap-3 text-sm text-gray-600">
                     <Mail size={16} className="text-[#2A74ED]" /> 
-                    <a href="mailto:legal@thingsatweb.com" className="hover:text-[#2A74ED] transition-colors">legal@thingsatweb.com</a>
+                    <a href="mailto:support@virtualtour360.ai" className="hover:text-[#2A74ED] transition-colors">support@virtualtour360.ai</a>
                   </p>
-                  <p className="flex items-center gap-3 text-sm text-gray-600">
-                    <span className="font-bold text-[#2A74ED]">Phone:</span> 
-                    +46 70 777 07 27
-                  </p>
+                
                </div>
             </div>
           </section>

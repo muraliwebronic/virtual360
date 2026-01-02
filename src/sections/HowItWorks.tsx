@@ -94,7 +94,7 @@ const HowItWorks = () => {
       </div>
 
       {/* 4. Trust Badges */}
-      <div className="w-full max-w-4xl mx-auto mt-8 border-t border-b border-gray-100 py-6">
+      <div className="w-full max-w-4xl mx-auto mt-8 border rounded-xl border-gray-100 py-6">
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16">
           {/* Item 1 */}
           <div className="flex items-center gap-2.5 text-gray-700">

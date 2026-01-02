@@ -214,7 +214,6 @@ export default function PrivacyPolicy() {
                  <div className="space-y-4">
                    <p className="text-sm text-gray-600">
                      <strong>Email:</strong> legal@thingsatweb.com<br/>
-                     <strong>Phone:</strong> +46 70 777 07 27
                    </p>
                  </div>
                </div>
