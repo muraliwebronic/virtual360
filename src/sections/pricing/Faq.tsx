@@ -7,7 +7,7 @@ import { ArrowRight, HelpCircle } from "lucide-react"; // Added Import
 import ActionButton from "@/components/ui/ActionButtons";
 
 export default function Faq() {
-  const [openFaqs, setOpenFaqs] = useState<number[]>([0]); 
+  const [openFaqs, setOpenFaqs] = useState<number[]>([0]);
 
   const toggleFaq = (index: number) => {
     if (openFaqs.includes(index)) {
@@ -21,7 +21,6 @@ export default function Faq() {
     <section className="py-20 font-['Poppins']">
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-          
           {/* Left Column: Sticky Header */}
           <div className="flex flex-col gap-3">
             <div className="md:sticky md:top-32">
@@ -34,15 +33,16 @@ export default function Faq() {
                   <span className="text-[#2A74ED]">We have answers</span>
                 </h2>
                 <p className="text-gray-500 text-lg max-w-sm mb-2">
-                  Everything you need to know about building spatial tours on WordPress.
+                  Everything you need to know about building spatial tours on
+                  WordPress.
                 </p>
 
                 {/* Quick Link Added Here */}
-                <ActionButton 
-    href="/faq" 
-    label="View additional billing & technical questions" 
-    icon={HelpCircle} 
-  />
+                <ActionButton
+                  href="/faq"
+                  label="View additional billing & technical questions"
+                  icon={HelpCircle}
+                />
               </div>
             </div>
           </div>
@@ -59,7 +59,6 @@ export default function Faq() {
               />
             ))}
           </div>
-          
         </div>
       </div>
     </section>

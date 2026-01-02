@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { 
   ShieldCheck, Lock, Eye, Share2, 
-  UserCheck, Globe, Cookie, Mail 
+  UserCheck, Globe, Cookie, Mail, 
+  CheckCircle2
 } from "lucide-react";
 
 const sections = [
@@ -136,25 +137,55 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          <section id="security" className="scroll-mt-32">
-            <div className="bg-[#1A1A1A] text-white p-10 md:p-16 rounded-[3rem] relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-[#2A74ED] opacity-10 blur-[80px]" />
-               <h2 className="text-3xl font-bold mb-6">Data Storage & Security</h2>
-               <p className="text-gray-400 mb-10 leading-relaxed">
-                 Your data is stored on secure servers provided by industry leading hosting services.
-               </p>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 <ul className="space-y-4 text-sm">
-                   <li className="flex gap-3">✓ Encryption in transit (SSL/TLS)</li>
-                   <li className="flex gap-3">✓ Encryption at rest for sensitive data</li>
-                 </ul>
-                 <ul className="space-y-4 text-sm">
-                   <li className="flex gap-3">✓ Regular security audits</li>
-                   <li className="flex gap-3">✓ Backup and recovery systems</li>
-                 </ul>
-               </div>
-            </div>
-          </section>
+         <section id="security" className="scroll-mt-32">
+  {/* Clean Light Card */}
+  <div className="bg-white border border-gray-200 p-8 md:p-12 rounded-3xl shadow-sm relative overflow-hidden">
+    
+    {/* Subtle Background Gradient (Top Right) */}
+    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/80 rounded-full blur-[100px] pointer-events-none" />
+
+    <div className="relative z-10">
+      {/* Header with Icon */}
+      <div className="flex items-center gap-4 mb-5">
+        <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2A74ED]">
+          <ShieldCheck size={24} />
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
+          Data Storage & Security
+        </h2>
+      </div>
+
+      <p className="text-gray-600 mb-10 leading-relaxed text-lg max-w-2xl">
+        Your data is stored on secure servers provided by industry leading hosting services, ensuring your information remains protected at all times.
+      </p>
+
+      {/* Security Features Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-5">
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <CheckCircle2 size={20} className="text-green-500 shrink-0" />
+            <span className="text-gray-700 font-medium">Encryption in transit (SSL/TLS)</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <CheckCircle2 size={20} className="text-green-500 shrink-0" />
+            <span className="text-gray-700 font-medium">Encryption at rest for sensitive data</span>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <CheckCircle2 size={20} className="text-green-500 shrink-0" />
+            <span className="text-gray-700 font-medium">Regular security audits</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <CheckCircle2 size={20} className="text-green-500 shrink-0" />
+            <span className="text-gray-700 font-medium">Backup and recovery systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
           <section id="rights" className="scroll-mt-32">
             <h2 className="text-3xl font-bold text-[#1A1A1A] mb-6">Your Rights</h2>

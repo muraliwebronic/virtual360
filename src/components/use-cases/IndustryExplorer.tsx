@@ -170,7 +170,7 @@ const IndustryExplorer = () => {
                 <header className="mb-10">
                   <div className="flex flex-col md:flex-row items-center justify-between mb-5">
                     {/* Tag */}
-                    <span className="inline-flex items-center  max-md:mr-auto px-2.5 md:py-0.5 rounded-md py-2 md:rounded-full bg-blue-50 text-[#2A74ED] text-[11px] font-bold uppercase tracking-wider border border-blue-100">
+                    <span className="inline-flex items-center  max-md:mr-auto px-2.5 md:py-0.5 rounded-md py-2 md:rounded-full text-[#2A74ED] text-[11px] font-bold uppercase tracking-wider">
                       Use Case: {activeData.title}
                     </span>
 
