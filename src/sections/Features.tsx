@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link"; // Import for internal linking
-import { ArrowRight } from "lucide-react"; // Consistent icon usage
+import { ArrowRight, Layers, PlayCircle } from "lucide-react"; // Consistent icon usage
 import SectionHeading from "@/components/ui/SectionHeading";
+import ActionButton from "@/components/ui/ActionButtons";
 
 const Features = () => {
   // Content matches your optimized SEO requirements
@@ -91,16 +92,11 @@ const Features = () => {
 
         {/* --- SEO: Internal Linking Strategy --- */}
         <div className="mt-16 flex justify-center">
-          <Link
-            href="/features"
-            className="group inline-flex items-center gap-2 text-[#2A74ED] font-semibold text-lg hover:text-[#1a5fc7] transition-colors"
-          >
-            <span>View All Features</span>
-            <ArrowRight
-              size={20}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </Link>
+           <ActionButton
+          href="/features" 
+    label="View All Features" 
+    icon={Layers}
+        />
         </div>
       </div>
     </section>

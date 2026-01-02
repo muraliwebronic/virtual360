@@ -10,7 +10,7 @@ import FinalPricingCTA from "@/sections/pricing/FinalPricingCTA";
 
 export default function PricingPage() {
   return (
-    <main className="bg-white">
+    <main className="pt-32 pb-20 px-6 bg-gray-50">
       {/* 1. Pricing Plans */}
       <section id="plans">
         <Pricing />

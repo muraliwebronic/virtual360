@@ -89,7 +89,7 @@ const Pricing = () => {
     ];
 
   return (
-    <section className="bg-gray-50  py-22 font-['Poppins']">
+    <section className="bg-gray-50  font-['Poppins']">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">

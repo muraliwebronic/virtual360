@@ -98,24 +98,30 @@ const IndustryExplorer = () => {
   }, []);
 
   return (
-    <section className="bg-white py-16 mt-10 md:mt-20 font-['Poppins']" id="industry-use-cases">
+    <section
+      className="bg-white py-16 mt-10 md:mt-20 font-['Poppins']"
+      id="industry-use-cases"
+    >
       <div className="container max-w-7xl mx-auto px-4 lg:px-8">
-        
         {/* Page Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
-            Virtual Tours for <span className="text-[#2A74ED]">Every Industry</span>
+            Virtual Tours for{" "}
+            <span className="text-[#2A74ED]">Every Industry</span>
           </h1>
           <p className="text-gray-600 text-lg">
-            From real estate to education, discover how immersive 360° experiences drive engagement, ROI, and customer trust.
+            From real estate to education, discover how immersive 360°
+            experiences drive engagement, ROI, and customer trust.
           </p>
         </div>
 
         {/* --- Layout Split --- */}
         <div className="flex flex-col lg:flex-row gap-8 xl:gap-12 relative">
-          
           {/* ================= LEFT: Navigation Sidebar ================= */}
-          <nav className="w-full lg:w-64 lg:shrink-0" aria-label="Industry Categories">
+          <nav
+            className="w-full lg:w-64 lg:shrink-0"
+            aria-label="Industry Categories"
+          >
             <div className="lg:sticky lg:top-32 flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-1 pb-4 lg:pb-0 no-scrollbar snap-x snap-mandatory">
               {industriesData.map((item) => {
                 const isActive = activeTab === item.id;
@@ -228,40 +234,50 @@ const IndustryExplorer = () => {
                 </div>
 
                 {/* 3. BUSINESS STATS */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                  {/* Impact */}
-                  <div className="bg-[#0F172A] rounded-xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-[60px] -translate-y-10 translate-x-10 group-hover:bg-blue-600/30 transition-colors duration-500"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-2 text-blue-400 mb-3">
-                        <TrendingUp size={18} />
-                        <h3 className="text-xs font-bold uppercase tracking-widest">
+                <div className="border-y border-gray-100 py-8 mb-10">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative">
+                    {/* Vertical Divider (Desktop only) */}
+                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-100 -translate-x-1/2"></div>
+
+                    {/* Impact Section */}
+                    <div className="flex flex-row items-start gap-4">
+                      <div className="shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#2A74ED]">
+                          <TrendingUp size={20} />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm mb-1">
                           Business Impact
                         </h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          {activeData.impact}
+                        </p>
                       </div>
-                      <p className="text-base text-gray-300 leading-relaxed font-light">
-                        {activeData.impact}
-                      </p>
                     </div>
-                  </div>
 
-                  {/* ROI */}
-                  <div className="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm relative group hover:border-blue-200 transition-colors">
-                    <div className="flex items-center gap-2 text-[#2A74ED] mb-3">
-                      <BarChart3 size={18} />
-                      <h3 className="text-xs font-bold uppercase tracking-widest">
-                        Typical ROI
-                      </h3>
+                    {/* ROI Section */}
+                    <div className="flex flex-row items-start gap-4">
+                      <div className="shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center text-green-600">
+                          <BarChart3 size={20} />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm mb-1">
+                          Typical ROI
+                        </h3>
+                        <p className="text-gray-600   leading-relaxed">
+                          {activeData.roi}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-base text-gray-600 leading-relaxed">
-                      {activeData.roi}
-                    </p>
                   </div>
                 </div>
 
                 {/* 4. APPLICATIONS */}
-                <div className="bg-gray-50/50 border border-gray-100 rounded-2xl p-8">
-                  <h3 className="text-base font-bold text-[#111827] mb-6 flex items-center gap-2">
+                <div className="  p-8">
+                  <h3 className=" font-bold text-[#111827] mb-6 flex items-center gap-2">
                     Specific Applications
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-10">

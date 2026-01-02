@@ -6,9 +6,9 @@ interface StepBlockProps {
   number: string;
   title: string;
   subtitle: string;
-  description: React.ReactNode;
-  insightTitle?: string;
-  insight?: string;
+  description: React.ReactNode; // Changed to Node to allow bolding/breaks
+  insightTitle?: string; // For "What happens behind the scenes"
+  insight?: string;      // The actual text
   detailsTitle?: string;
   details: string[];
   imageSrc?: string;
@@ -48,10 +48,10 @@ const StepBlock = ({
         <h3 className="text-sm font-bold uppercase tracking-wider text-blue-600 mb-2">
           Step {number}
         </h3>
-        <h2 className="text-xl md:text-4xl font-bold text-[#1A1A1A] mb-3 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-3 leading-tight">
           {title}
         </h2>
-        <h4 className="  font-medium text-secondary mb-6">
+        <h4 className="text-lg md:text-xl font-medium text-secondary mb-6">
           {subtitle}
         </h4>
         
@@ -60,31 +60,30 @@ const StepBlock = ({
           {description}
         </div>
 
-        {/* Insight Section: Minimal Developer Notice */}
+        {/* Insight Box (Behind the Scenes / Publishing Info) */}
         {insight && (
-          <div className="mb-8 pl-4 border-l-2 border-blue-400/30">
+          <div className="mb-8 bg-blue-50/50 rounded-xl p-5 border border-blue-100">
             {insightTitle && (
-               <h5 className="font-semibold text-gray-900 mb-1 flex items-center gap-2 text-xs uppercase tracking-wider">
-                 {insightTitle}
+               <h5 className="font-semibold text-[#2A74ED] mb-2 flex items-center gap-2 text-sm uppercase tracking-wide">
+                 <Info size={16} /> {insightTitle}
                </h5>
             )}
-            <p className="text-gray-500 text-sm leading-relaxed italic">
+            <p className="text-gray-700 text-sm  leading-relaxed">
               {insight}
             </p>
           </div>
         )}
 
-        {/* Details List: Clean Layout (No Box) */}
+        {/* Details List */}
         {detailsTitle && (
-          <div className="mt-4">
-            <h5 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-sm">
-               {/* Small accent to anchor the list title */}
+          <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+            <h5 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-4 bg-blue-500 rounded-full"/> 
               {detailsTitle}
             </h5>
             <ul className="space-y-3">
               {details.map((detail, index) => (
-                <li key={index} className="flex items-start gap-3 text-sm text-gray-600">
-                   {/* Checkmarks provide the visual weight now */}
+                <li key={index} className="flex items-start gap-3 text-sm text-gray-700">
                    <CheckCircle2 size={18} className="text-green-500 shrink-0 mt-0.5" />
                    <span className="leading-snug">{detail}</span>
                 </li>

@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading"; // Reusable Heading
+import { ArrowRight, Compass } from "lucide-react";
 import { useRouter } from "next/navigation";
+import SectionHeading from "@/components/ui/SectionHeading"; // Corrected path
+import ActionButton from "@/components/ui/ActionButtons";
 
 const IndustriesSection = () => {
   const router = useRouter();
 
-  // Updated Data with Anchor IDs for routing
+  // Data with Anchors matching 'IndustryExplorer' IDs
   const industries = [
     {
       title: "Retail & Showrooms",
@@ -38,7 +39,7 @@ const IndustriesSection = () => {
     {
       title: "Offices & Workspaces",
       icon: "./Icons/360 Tour Website/group-152.png",
-      anchor: "real-estate", // Grouping with Real Estate/Construction
+      anchor: "real-estate", // Maps to Real Estate tab
     },
     {
       title: "Architecture & Interiors",
@@ -48,15 +49,15 @@ const IndustriesSection = () => {
   ];
 
   const handleCardClick = (anchorId: string) => {
+    // Navigates to /use-cases page and scrolls to the specific ID
     router.push(`/use-cases#${anchorId}`);
   };
 
   return (
     <section className="w-full bg-base shadow-inner font-['Poppins'] py-20">
       <div className="max-w-7xl mx-auto">
-        
-        {/* 1. Header (Using Component) */}
-        <SectionHeading 
+        {/* 1. Header */}
+        <SectionHeading
           title="Perfect For"
           highlight="Every Industry"
           description="From real estate to education, our 360° tour plugin works for any business that wants to showcase spaces"
@@ -67,15 +68,14 @@ const IndustriesSection = () => {
 
         {/* 2. Scrolling Carousel */}
         <div className="relative w-full overflow-hidden">
-          {/* Added 'group' to container to pause animation on hover */}
+          {/* 'group' class allows pausing animation on hover */}
           <div className="flex w-max animate-scroll gap-6 md:gap-12 py-10 hover:[animation-play-state:paused]">
-            
             {/* Duplicated list for seamless infinite scroll */}
             {[...industries, ...industries].map((item, index) => (
               <button
                 key={index}
                 onClick={() => handleCardClick(item.anchor)}
-                className={`group bg-white w-40 md:w-48 h-40 md:h-48 rounded-[24px] 
+                className={`group bg-white w-40 md:w-48 h-40 md:h-48 rounded-3xl
                   shrink-0 flex flex-col items-center justify-center p-4 text-center 
                   border border-gray-50 hover:border-[#2A74ED]/30 
                   shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgb(42,116,237,0.15)] 
@@ -101,15 +101,12 @@ const IndustriesSection = () => {
 
         {/* 3. Bottom CTA Button */}
         <div className="mt-12 flex justify-center">
-          <Link 
-             href="/use-cases" 
-             className="group inline-flex items-center gap-2 px-8 py-3.5 bg-white border border-gray-200 rounded-xl hover:border-blue-400 hover:shadow-lg transition-all text-[#1A1A1A] font-semibold  md:text-lg"
-          >
-             <span>Explore All Use Cases</span>
-             <ArrowRight size={20} className="text-[#2A74ED] transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          <ActionButton
+            href="/use-cases"
+            label="Explore All Use Cases"
+            icon={Compass}
+          />
         </div>
-
       </div>
     </section>
   );

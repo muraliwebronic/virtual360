@@ -12,23 +12,24 @@ import StatsCard from "@/sections/StatsCard";
 import USPShowcase from "@/sections/USPShowcase";
 import SocialProofSection from "@/sections/new/SocialProofSection";
 
-
 export default function page() {
   return (
     <>
-    <Hero />
-    <SocialProofSection />
-    <Features />
-    <USPShowcase />
-    <StatsCard />
-    <HowItWorks />
-    <Industries />
-    {/* <Pricingv1 /> */}
-    <Pricing />
-    <Faq />
-    <LiveDemoGallery />
-    {/* <SocialProof /> */}
-   
+      <Hero />
+      <SocialProofSection />
+      <Features />
+      <USPShowcase />
+      <StatsCard />
+      <HowItWorks />
+      <Industries />
+      {/* <Pricingv1 /> */}
+      <div className="py-20 bg-gray-50">
+        <Pricing />
+      </div>
+
+      <Faq />
+      <LiveDemoGallery />
+      {/* <SocialProof /> */}
     </>
-  )
+  );
 }

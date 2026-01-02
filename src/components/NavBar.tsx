@@ -136,7 +136,7 @@ export default function NavBar() {
             );
           })}
           <li className="pt-4 mt-2 border-t border-foreground/5">
-             <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+             <Link href="https://wplicense.webronics.com/login-360/" onClick={() => setMobileMenuOpen(false)}>
               <button className="w-full grad-primary hover:grad-secondary text-white py-3.5 rounded-lg font-bold shadow-md active:scale-95 transition-transform">
                 Log in
               </button>

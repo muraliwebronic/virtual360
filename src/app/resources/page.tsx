@@ -49,7 +49,7 @@ export default function ResourcesPage() {
               Latest Insights
             </h2>
             <p className="text-gray-500">
-              Expert guides on the future of the spatial web.
+              Expert guides on the future of the spatial web
             </p>
           </div>
         </div>
@@ -127,18 +127,20 @@ export default function ResourcesPage() {
       </section>
 
       {/* 5. DOWNLOADABLE TOOLS (Checklists & Templates) */}
-      <section className="py-24 bg-[#1A1A1A] text-white overflow-hidden rounded-[4rem] mx-4 mb-24">
-        <div className="container max-w-7xl mx-auto px-10">
+      <section className="py-24  overflow-hidden mb-24">
+        <div className="container max-w-7xl mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Text Content */}
             <div>
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
                 Free Tools & <br />
                 <span className="text-[#2A74ED]">Templates</span>
               </h2>
-              <p className="text-gray-400 mb-10 leading-relaxed">
+              <p className="text-gray-600 mb-10 leading-relaxed text-lg">
                 Download our professional checklists and planning worksheets to
-                streamline your virtual tour business.
+                streamline your virtual tour business
               </p>
+
               <div className="space-y-4">
                 {[
                   "Photography Checklists",
@@ -146,20 +148,28 @@ export default function ResourcesPage() {
                   "ROI Spreadsheets",
                 ].map((tool, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="text-[#2A74ED]" size={20} />
-                    <span className="font-medium">{tool}</span>
+                    <CheckCircle2
+                      className="text-[#2A74ED] shrink-0"
+                      size={20}
+                    />
+                    <span className="font-medium text-gray-700">{tool}</span>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Resource Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {freeResources.marketingMaterials.slice(0, 4).map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/5 border border-white/10 p-6 rounded-3xl hover:bg-white/10 transition-all cursor-pointer group"
+                  className="bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-200 transition-all cursor-pointer group"
                 >
-                  <Download size={24} className="mb-4 text-[#2A74ED]" />
-                  <p className="font-bold text-sm group-hover:text-blue-400 transition-colors">
+                  <Download
+                    size={24}
+                    className="mb-4 text-gray-400 group-hover:text-[#2A74ED] transition-colors"
+                  />
+                  <p className="font-bold text-sm text-gray-800 group-hover:text-[#2A74ED] transition-colors">
                     {item}
                   </p>
                 </div>
@@ -213,7 +223,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* 7. FINAL CTA */}
-     <FinalResourcesCTA />
+      <FinalResourcesCTA />
     </main>
   );
 }
