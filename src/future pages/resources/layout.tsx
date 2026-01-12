@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Virtual Tour 360: Resources, Tutorials & Case Studies",
     description: "The ultimate hub for spatial web creators and real estate professionals.",
-    url: "https://app.virtualtour360.ai/resources",
+    url: "https://virtualtour360.ai/resources",
     type: "website",
   },
 };

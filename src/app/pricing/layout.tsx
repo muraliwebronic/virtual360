@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pricing Plans | Virtual Tour 360",
     description: "Start your 14-day free trial. Build immersive tours for WordPress and Vision Pro at the best price.",
-    url: "https://app.virtualtour360.ai/pricing",
+    url: "https://virtualtour360.ai/pricing",
     type: "website",
   },
 };

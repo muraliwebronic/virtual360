@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Virtual Tours for Every Industry | Virtual Tour 360",
     description: "See how professionals in Real Estate, Retail, and Hospitality use 360 tours to grow business.",
-    url: "https://app.virtualtour360.ai/use-cases",
+    url: "https://virtualtour360.ai/use-cases",
     type: "article",
     images: ["/use-cases-og.jpg"],
   },

@@ -44,8 +44,7 @@ export default function PrivacyPolicy() {
     handleScroll();
   }, []);
 
-  // --- RESPONSIVE STYLES ---
-  // Mobile: Smaller margins/fonts | Desktop: Larger margins/fonts
+
   const h2Style = "text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-4 md:mb-6 mt-2";
   const h3Style = "text-lg font-bold text-[#1A1A1A] mb-2 md:mb-3 mt-4 md:mt-6";
   const pStyle = "text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:";
@@ -55,8 +54,7 @@ export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-white font-['Poppins']">
       
-      {/* --- HERO SECTION --- */}
-      {/* Reduced padding for mobile (pt-24 pb-8) vs Desktop (pt-32 pb-16) */}
+   
       <header className="pt-24 pb-8 md:pt-32 md:pb-16 border-b border-gray-100 bg-gray-50/50">
         <div className="container max-w-7xl mx-auto px-6">
           <SectionHeading

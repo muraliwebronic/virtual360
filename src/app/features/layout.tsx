@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Features | Virtual Tour 360",
     description: "The only no-code builder with native Apple Vision Pro & Meta Quest support. Create professional tours in minutes.",
-    url: "https://app.virtualtour360.ai/features",
+    url: "https://virtualtour360.ai/features",
     type: "website",
     images: ["/features-og-image.jpg"],
   },

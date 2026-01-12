@@ -3,7 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://app.virtualtour360.ai/";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://virtualtour360.ai/";
 
 export const viewport: Viewport = {
   themeColor: "#e7f6f26e",

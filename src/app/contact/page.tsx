@@ -59,7 +59,6 @@ export default function ContactPage() {
             className="mb-16"
           />
 
-          {/* Changed to grid-cols-3 to balance 6 items (2 tools + 4 socials) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Essential Tools */}
             <ToolLinkCard
@@ -163,7 +162,6 @@ const ContactMethodCard = ({ icon, title, detail }: any) => (
 const ToolLinkCard = ({ icon, title, link, target }: any) => (
   <Link
     href={link}
-    // Logic: Use the specific target if provided, otherwise check for "http"
     target={target || (link.startsWith("http") ? "_blank" : "_self")}
     className="bg-white p-8 rounded-4xl border border-gray-100 hover:shadow-lg transition-all text-center group"
   >

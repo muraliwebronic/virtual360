@@ -200,7 +200,6 @@ export default function HowItWorksPage() {
             href="/pricing"
             className="relative group w-full sm:w-auto px-8 py-3.5 overflow-hidden bg-[#2A74ED] text-white rounded-2xl shadow-xl shadow-blue-500/10 hover:shadow-blue-600/20 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-[0.98]"
           >
-            {/* Subtle gradient overlay for depth, not color change */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             <div className="relative z-10 flex items-center  justify-between sm:justify-center gap-4">
