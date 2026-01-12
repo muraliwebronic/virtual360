@@ -58,21 +58,23 @@ const SocialProofSection = () => {
 
   const formatNumber = (numStr: string) => {
     const num = parseFloat(numStr);
-    return num.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 1 });
+    return num.toLocaleString("en-US", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 1,
+    });
   };
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="w-full bg-white border-b border-gray-100 font-['Poppins']"
     >
       <div className="container max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
-         
         {/* --- Section Header --- */}
-        <SectionHeading 
+        <SectionHeading
           title="Trusted by the World’s Best"
           highlight="Creators & Agencies"
-          description="Join the fastest-growing community building the immersive web."
+          description="Join the fastest-growing community building the immersive web"
           size="normal"
           breakOnDesktop={true}
           className="mb-16"
@@ -81,20 +83,41 @@ const SocialProofSection = () => {
         {/* --- Stats Grid --- */}
         {/* FIXED: Changed items-center to items-start so everything aligns to the top */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-start">
-          
           {/* 1. Rating Block */}
-          <div className="flex flex-col items-center justify-start group cursor-default">
-            {/* FIXED: Added h-14 to match the height of the icon boxes below */}
+          <div className="flex flex-col items-center justify-start group cursor-default relative">
+            {/* 1. Define the Gradient (Hidden) */}
+            {/* This creates a fill that is 90% yellow and 10% transparent */}
+            <svg width="0" height="0" className="absolute block">
+              <defs>
+                <linearGradient
+                  id="star-90-fill"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="85%" stopColor="#FDB022" />
+                  <stop offset="85%" stopColor="transparent" />
+                </linearGradient>
+              </defs>
+            </svg>
+
             <div className="h-14 flex items-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star 
-                  key={i} 
-                  size={22} 
-                  className={`fill-[#FDB022] text-[#FDB022] transition-transform duration-300 group-hover:scale-110 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
+                <Star
+                  key={i}
+                  size={22}
+                  // 2. Logic: If it's the last star (index 4), use the gradient URL. Otherwise use solid color.
+                  fill={i === 4 ? "url(#star-90-fill)" : "#FDB022"}
+                  className={`text-[#FDB022] transition-transform duration-300 group-hover:scale-110 ${
+                    isVisible ? "animate-fade-in" : "opacity-0"
+                  }`}
+                  strokeWidth={0.5}
                   style={{ transitionDelay: `${i * 100}ms` }}
                 />
               ))}
             </div>
+
             <h3 className="text-4xl font-bold text-[#1A1A1A] mb-1 tracking-tight">
               {useCounter(4.9, 2000, 1, isVisible)}/5
             </h3>
@@ -108,7 +131,10 @@ const SocialProofSection = () => {
           <div className="flex flex-col items-center justify-start group">
             {/* Icon Box: h-14 */}
             <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 text-[#2A74ED] group-hover:bg-[#2A74ED] group-hover:text-white transition-colors duration-300">
-              <Box size={26} className="transition-transform duration-300 group-hover:rotate-12" />
+              <Box
+                size={26}
+                className="transition-transform duration-300 group-hover:rotate-12"
+              />
             </div>
             <h3 className="text-4xl font-bold text-[#1A1A1A] mb-1 tracking-tight tabular-nums">
               {formatNumber(useCounter(50000, 2500, 0, isVisible))}+
@@ -123,7 +149,10 @@ const SocialProofSection = () => {
           <div className="flex flex-col items-center justify-start group">
             {/* Icon Box: h-14 */}
             <div className="w-14 h-14 rounded-2xl bg-[#ECFDF3] flex items-center justify-center mb-4 text-[#027A48] group-hover:bg-[#027A48] group-hover:text-white transition-colors duration-300">
-              <Users size={26} className="transition-transform duration-300 group-hover:scale-110" />
+              <Users
+                size={26}
+                className="transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
             <h3 className="text-4xl font-bold text-[#1A1A1A] mb-1 tracking-tight tabular-nums">
               {formatNumber(useCounter(5000, 2500, 0, isVisible))}+
@@ -132,7 +161,6 @@ const SocialProofSection = () => {
               Agencies, Freelancers & Creators
             </p>
           </div>
-
         </div>
       </div>
     </section>

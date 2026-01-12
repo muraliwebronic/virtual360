@@ -42,7 +42,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Real estate agents report 30-50% reduction in unnecessary property visits from unqualified buyers. Virtual tours act as a pre-qualification tool that attracts serious buyers while saving time. Properties with virtual tours receive 87% more views and generate 49% more qualified leads than listings without tours.",
     roi: "A single property sale pays for an annual subscription many times over. Agents who adopt virtual tours consistently report higher close rates and faster time to sale.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/real-estate-property-development/",
   },
   {
     id: "hospitality",
@@ -61,7 +61,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Hospitality businesses with virtual tours see 67% higher booking conversion rates compared to those relying only on photos. Virtual tours reduce pre-arrival questions to front desk staff by 45% and decrease booking cancellations from unmet expectations by 31%.",
     roi: "Even small hotels report a 15-25% increase in direct bookings after adding virtual tours to their websites, reducing dependency on third party booking platforms with high commission fees.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/hospitality-hotels/",
   },
   {
     id: "retail",
@@ -80,7 +80,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Retailers with virtual tours report 40% longer average session duration on their websites and 28% higher conversion from browsers to in store visitors. Virtual showrooms also reduce returns by setting accurate expectations about products and store experience.",
     roi: "Large furniture retailers see virtual tours pay for themselves within weeks through increased foot traffic and reduced “just browsing” visits.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/retail-showrooms/",
   },
   {
     id: "architecture",
@@ -99,7 +99,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Design professionals using virtual tours report 60% fewer revision requests because clients understand spaces better before construction. Virtual tours also accelerate approval processes by 25-40%.",
     roi: "A single project saved from major revision covers years of subscription costs. Firms also report winning 35% more proposals.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/architecture-interior-design/",
   },
   {
     id: "education",
@@ -118,7 +118,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Universities with virtual tours see 45% more engagement from prospective students beyond commuting distance and reduce strain on admissions staff.",
     roi: "Even small enrollment increases create tuition revenue that far exceeds the minimal cost of virtual tour technology.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/education-university-campuses/",
   },
   {
     id: "construction",
@@ -137,7 +137,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Construction firms reduce stakeholder site visits by 70%, saving time and improving safety by limiting non-essential personnel.",
     roi: "Time saved typically delivers 10-20x return on subscription cost.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/construction-site-planning/",
   },
   {
     id: "museums",
@@ -156,7 +156,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Institutions reach 300-500% more people and drive 35% more in person attendance.",
     roi: "Membership and donation growth generate returns measured in thousands of percent.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/museums-galleries/",
   },
   {
     id: "events",
@@ -175,7 +175,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Venues book 40% more out of town events and reduce time spent on unqualified tours.",
     roi: "Single high value bookings exceed annual costs by 100-1000x.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/events-venues/",
   },
   {
     id: "automotive",
@@ -194,7 +194,7 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Dealerships see 25% more showroom visits from pre-qualified customers.",
     roi: "One additional vehicle sale per year covers subscription costs.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/automotive-showrooms/",
   },
   {
     id: "healthcare",
@@ -213,6 +213,6 @@ export const industriesData: IndustryItem[] = [
     impact:
       "Facilities report 35% reduction in first appointment no-shows.",
     roi: "Reduced no-shows and higher acquisition make tours self funding within one month.",
-    embedUrl: "https://wplicense.webronics.com/real-estate/",
+    embedUrl: "https://app.virtualtour360.ai/healthcare-facilities/",
   },
 ];

@@ -123,7 +123,7 @@ const IndustryExplorer = () => {
               {/* Iframe */}
               <iframe
                 key={activeTab} // Force re-render on tab change
-                src={activeData.embedUrl || "https://wplicense.webronics.com/real-estate/"} 
+                src={activeData.embedUrl || "https://app.virtualtour360.ai/real-estate/"} 
                 title={`${activeData.title} Demo`}
                 className={`w-full h-full border-0 transition-opacity duration-700 ${iframeLoaded && !isTransitioning ? 'opacity-100' : 'opacity-0'}`}
                 allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"

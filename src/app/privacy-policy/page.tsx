@@ -5,7 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { 
   ShieldCheck, Lock, Eye, Share2, 
   UserCheck, Globe, Cookie, Mail, 
-  FileText, Server, AlertTriangle, Layers
+  FileText, ArrowRight
 } from "lucide-react";
 
 const sections = [
@@ -16,7 +16,7 @@ const sections = [
   { id: 'sharing', title: 'Sharing & Disclosure', icon: <Share2 size={18} /> },
   { id: 'rights', title: 'Your Rights', icon: <Globe size={18} /> },
   { id: 'cookies', title: 'Cookies & Tracking', icon: <Cookie size={18} /> },
-  { id: 'compliance', title: 'GDPR & CCPA', icon: <ShieldCheck size={18} /> },
+  { id: 'compliance', title: 'Compliance', icon: <ShieldCheck size={18} /> },
   { id: 'contact', title: 'Contact', icon: <Mail size={18} /> },
 ];
 
@@ -44,280 +44,229 @@ export default function PrivacyPolicy() {
     handleScroll();
   }, []);
 
+  // --- RESPONSIVE STYLES ---
+  // Mobile: Smaller margins/fonts | Desktop: Larger margins/fonts
+  const h2Style = "text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-4 md:mb-6 mt-2";
+  const h3Style = "text-lg font-bold text-[#1A1A1A] mb-2 md:mb-3 mt-4 md:mt-6";
+  const pStyle = "text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:";
+  const listStyle = "space-y-2 mb-4 text-gray-600 list-disc pl-5 text-sm md:";
+  const sectionStyle = "mb-10 md:mb-16 scroll-mt-28 md:scroll-mt-32 border-b border-gray-100 pb-8 md:pb-12";
+
   return (
     <main className="min-h-screen bg-white font-['Poppins']">
       
-      {/* --- 1. HERO SECTION --- */}
-      <header className="pt-32 pb-12 border-b border-gray-100">
+      {/* --- HERO SECTION --- */}
+      {/* Reduced padding for mobile (pt-24 pb-8) vs Desktop (pt-32 pb-16) */}
+      <header className="pt-24 pb-8 md:pt-32 md:pb-16 border-b border-gray-100 bg-gray-50/50">
         <div className="container max-w-7xl mx-auto px-6">
           <SectionHeading
             title="Privacy"
             highlight="Policy"
-            description="Effective Date: January 1, 2025 | Last Updated: January 1, 2025"
+            description="We are committed to protecting your privacy and ensuring transparency in how we handle your data."
             size="large"
             gradient={true}
-            className="text-left mb-0"
+            align="left"
+            className="mb-4 md:mb-6"
           />
+          <p className="text-gray-500 font-medium text-xs md:text-sm">
+             Effective Date: <span className="text-[#1A1A1A]">January 1, 2025</span>
+          </p>
         </div>
       </header>
 
-      <div className="container max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      {/* Main Grid: Reduced vertical padding on mobile (py-8) */}
+      <div className="container max-w-7xl mx-auto px-6 py-8 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         
-        {/* --- 2. SIDEBAR NAVIGATION --- */}
+        {/* --- SIDEBAR NAVIGATION (Hidden on Mobile) --- */}
         <aside className="hidden lg:block lg:col-span-3">
-          <nav className="sticky top-32 space-y-1 border-l border-gray-100">
+          <nav className="sticky top-32 space-y-1">
             {sections.map((section) => (
               <button
                 key={section.id}
                 onClick={() => document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' })}
-                className={`w-full text-left px-5 py-3 text-sm font-medium transition-all duration-300 flex items-center gap-3 border-l-2 -ml-[1px] ${
+                className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-lg flex items-center gap-3 ${
                   activeSection === section.id 
-                  ? "border-[#2A74ED] text-[#2A74ED] bg-blue-50/50" 
-                  : "border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                  ? "bg-blue-50 text-[#2A74ED]" 
+                  : "text-gray-500 hover:text-[#1A1A1A] hover:bg-gray-50"
                 }`}
               >
                 {section.icon}
-                <span>{section.title}</span>
+                {section.title}
               </button>
             ))}
           </nav>
         </aside>
 
-        {/* --- 3. POLICY CONTENT --- */}
-        <div className="col-span-1 lg:col-span-9 text-gray-600 leading-relaxed">
+        {/* --- MAIN CONTENT --- */}
+        <div className="col-span-1 lg:col-span-9">
           
-          {/* Introduction */}
-          <section id="intro" className="mb-16 scroll-mt-32">
-             <p className="text-lg text-gray-700">
-              Things at Web Sweden AB (“we,” “our,” or “us”) operates <strong>Virtual Tour 360</strong>. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
+          {/* 1. Introduction */}
+          <section id="intro" className={sectionStyle}>
+             <p className="text-lg md:text-xl text-gray-800 leading-relaxed mb-4 md:mb-6">
+               Things at Web Sweden AB (“we,” “our,” or “us”) operates <strong>Virtual Tour 360</strong>. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
+            </p>
+            <p className={pStyle}>
+              By using our Service, you agree to the collection and use of information in accordance with this policy.
             </p>
           </section>
 
-          {/* Information We Collect */}
-          <section id="collection" className="mb-16 scroll-mt-32">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-              Information We Collect
-            </h2>
+          {/* 2. Information We Collect */}
+          <section id="collection" className={sectionStyle}>
+            <h2 className={h2Style}>Information We Collect</h2>
             
-            <div className="grid md:grid-cols-2 gap-10">
-              <div>
-                <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide text-blue-600">Personal Information</h3>
-                <p className="mb-3 text-sm">When you register for Virtual Tour 360, we collect:</p>
-                <ul className="space-y-2 text-sm">
-                  {["Name and email address", "Company name (optional)", "Billing address", "Payment information (processed by Razorpay, not stored on our servers)", "Phone number (optional)"].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <h3 className={h3Style}>Personal Information</h3>
+            <p className={pStyle}>When you register for Virtual Tour 360, we may collect personally identifiable information, including but not limited to:</p>
+            <ul className={listStyle}>
+              <li>Email address and Full Name</li>
+              <li>Phone number (Optional)</li>
+              <li>Billing Address and Company details</li>
+              <li>Payment Information (Processed securely by Razorpay)</li>
+            </ul>
 
-              <div>
-                <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide text-blue-600">Usage Information</h3>
-                <p className="mb-3 text-sm">We automatically collect:</p>
-                <ul className="space-y-2 text-sm">
-                  {["IP address and geographic location", "Browser type and version", "Device information", "Pages visited and features used", "Time and date of visits", "Referring website", "Tour creation and viewing statistics"].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="md:col-span-2">
-                <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide text-blue-600">Content You Upload</h3>
-                <ul className="grid md:grid-cols-2 gap-2 text-sm">
-                  {["360 degree images", "Tour names and descriptions", "Hotspot content (text and images)", "Custom styling settings"].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="w-full h-px bg-gray-100 mt-12"></div>
+            <h3 className={h3Style}>Usage Data</h3>
+            <p className={pStyle}>We may also collect information that your browser sends whenever you visit our Service, such as:</p>
+            <ul className={listStyle}>
+              <li>Computer's Internet Protocol (IP) address</li>
+              <li>Browser type and browser version</li>
+              <li>The pages of our Service that you visit</li>
+              <li>The time and date of your visit</li>
+              <li>Time spent on those pages and other diagnostic data</li>
+            </ul>
           </section>
 
-          {/* How We Use Your Information */}
-          <section id="use" className="mb-16 scroll-mt-32">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">How We Use Your Information</h2>
-            <div className="grid md:grid-cols-2 gap-y-4 gap-x-8">
-              {[
-                "Provide and maintain our services",
-                "Process your subscriptions and payments",
-                "Send service related communications",
-                "Provide customer support",
-                "Improve our products and services",
-                "Send marketing communications (with your consent)",
-                "Comply with legal obligations",
-                "Prevent fraud and abuse"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
-                  <span className="text-gray-700 font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
-            <div className="w-full h-px bg-gray-100 mt-12"></div>
-          </section>
-
-          {/* Data Storage and Security */}
-          <section id="security" className="mb-16 scroll-mt-32">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Data Storage and Security</h2>
-            <div className="pl-6 border-l-2 border-blue-100">
-              <p className="mb-6">
-                Your data is stored on secure servers provided by industry leading hosting services. We implement:
-              </p>
-              <ul className="grid md:grid-cols-2 gap-3 mb-6 text-sm font-medium text-gray-800">
-                 {["Encryption in transit (SSL/TLS)", "Encryption at rest for sensitive data", "Regular security audits", "Access controls and authentication", "Backup and disaster recovery systems"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                       <ShieldCheck size={16} className="text-[#2A74ED]" /> {item}
-                    </li>
-                 ))}
-              </ul>
-              <p className="text-sm text-gray-500 italic">
-                We retain your data for as long as your account is active or as needed to provide services. Backup copies may persist up to 90 days after deletion.
-              </p>
-            </div>
-            <div className="w-full h-px bg-gray-100 mt-12"></div>
-          </section>
-
-          {/* Data Sharing and Disclosure */}
-          <section id="sharing" className="mb-16 scroll-mt-32">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Data Sharing and Disclosure</h2>
-            <p className="mb-6 font-medium text-gray-900">We do not sell your personal information. We share data only in these circumstances:</p>
-            
-            <div className="space-y-8">
-              <div>
-                <h4 className="font-bold text-gray-900 mb-2 text-sm">Service Providers</h4>
-                <div className="flex flex-wrap gap-2">
-                  {["Payment processing (Razorpay)", "Hosting services", "Email services", "Analytics (Google Analytics)", "Customer support tools"].map((tag, i) => (
-                    <span key={i} className="px-3 py-1 bg-gray-50 text-gray-600 text-xs rounded-full border border-gray-100">{tag}</span>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                   <h4 className="font-bold text-gray-900 mb-2 text-sm">Legal Requirements</h4>
-                   <p className="text-sm">We may disclose information if required by law, court order, or government request.</p>
-                </div>
-                <div>
-                   <h4 className="font-bold text-gray-900 mb-2 text-sm">Business Transfers</h4>
-                   <p className="text-sm">In the event of merger, acquisition, or sale, your information may be transferred to the new owner.</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full h-px bg-gray-100 mt-12"></div>
-          </section>
-
-          {/* Your Rights */}
-          <section id="rights" className="mb-16 scroll-mt-32">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Your Rights</h2>
-            <p className="mb-4">Depending on your location, you may have rights including:</p>
-            <ul className="space-y-3 mb-6">
-               {["Access your personal information", "Correct inaccurate information", "Delete your information (right to be forgotten)", "Export your data (data portability)", "Opt out of marketing communications", "Withdraw consent"].map((item, i) => (
-                 <li key={i} className="flex items-center gap-3 text-gray-700">
-                    <div className="w-1.5 h-1.5 bg-gray-300 rounded-full" />
-                    {item}
+          {/* 3. How We Use Info */}
+          <section id="use" className={sectionStyle}>
+            <h2 className={h2Style}>How We Use Your Information</h2>
+            <p className={pStyle}>We use the collected data for various purposes:</p>
+            <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2 md:gap-y-3 mt-4">
+               {[
+                 "To provide and maintain our Service",
+                 "To notify you about changes to our Service",
+                 "To allow you to participate in interactive features",
+                 "To provide customer support",
+                 "To gather analysis to improve our Service",
+                 "To monitor the usage of our Service",
+                 "To detect, prevent and address technical issues",
+                 "To provide you with news and special offers"
+               ].map((item, i) => (
+                 <li key={i} className="flex items-start gap-3 text-gray-600 text-sm md:">
+                   <span className="mt-1.5 w-1.5 h-1.5 bg-[#2A74ED] rounded-full shrink-0"></span>
+                   {item}
                  </li>
                ))}
             </ul>
-            <p className="text-sm font-medium">
-               To exercise these rights, contact <a href="mailto:support@virtualtour360.ai" className="text-[#2A74ED] hover:underline">support@virtualtour360.ai</a>.
+          </section>
+
+          {/* 4. Storage & Security */}
+          <section id="security" className={sectionStyle}>
+            <h2 className={h2Style}>Data Storage and Security</h2>
+            <p className={pStyle}>
+              The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
             </p>
-            <div className="w-full h-px bg-gray-100 mt-12"></div>
+            <div className="bg-blue-50/50 p-4 md:p-6 rounded-xl border border-blue-100 mt-4 md:mt-6">
+               <h4 className="font-bold text-[#2A74ED] mb-2 text-xs md:text-sm uppercase tracking-wide">Security Measures</h4>
+               <ul className="space-y-2 text-gray-700 font-medium text-sm md:">
+                 <li className="flex items-center gap-2"><Lock size={16} className="text-[#2A74ED]"/> SSL/TLS Encryption in transit</li>
+                 <li className="flex items-center gap-2"><Lock size={16} className="text-[#2A74ED]"/> Secure database encryption at rest</li>
+                 <li className="flex items-center gap-2"><Lock size={16} className="text-[#2A74ED]"/> Regular security audits and backups</li>
+               </ul>
+            </div>
           </section>
 
-          {/* Cookies, Third Party, Children */}
-          <section id="cookies" className="mb-16 scroll-mt-32">
-             <div className="grid md:grid-cols-2 gap-10">
-                <div>
-                   <h2 className="text-xl font-bold text-gray-900 mb-4">Cookies and Tracking</h2>
-                   <p className="text-sm mb-3">We use cookies and similar technologies for:</p>
-                   <ul className="space-y-1 text-sm text-gray-600 mb-4">
-                      <li>• Authentication and security</li>
-                      <li>• User preferences</li>
-                      <li>• Analytics and performance monitoring</li>
-                      <li>• Marketing and advertising</li>
-                   </ul>
-                   <p className="text-xs text-gray-500">You can control cookies through your browser settings. Blocking cookies may limit functionality.</p>
+          {/* 5. Sharing */}
+          <section id="sharing" className={sectionStyle}>
+            <h2 className={h2Style}>Data Sharing and Disclosure</h2>
+            <p className={pStyle}>
+               We do not sell your personal data. We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, or to assist us in analyzing how our Service is used.
+            </p>
+            <p className={pStyle}>
+              These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+            </p>
+            <h3 className={h3Style}>Legal Requirements</h3>
+            <p className={pStyle}>
+              We may disclose your Personal Data in the good faith belief that such action is necessary to comply with a legal obligation, protect and defend the rights or property of Things at Web Sweden AB, or protect against legal liability.
+            </p>
+          </section>
+
+          {/* 6. Your Rights */}
+          <section id="rights" className={sectionStyle}>
+            <h2 className={h2Style}>Your Data Protection Rights</h2>
+            <p className={pStyle}>
+              Depending on your location, you may have the following rights regarding your personal data:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
+              {[
+                "The right to access, update or to delete information.",
+                "The right of rectification.",
+                "The right to object.",
+                "The right of restriction.",
+                "The right to data portability.",
+                "The right to withdraw consent."
+              ].map((right, i) => (
+                <div key={i} className="flex gap-3">
+                  <div className="mt-1 text-[#2A74ED]"><ArrowRight size={16}/></div>
+                  <span className="text-gray-700 font-medium text-sm md:">{right}</span>
                 </div>
-                <div className="space-y-8">
-                   <div>
-                      <h2 className="text-xl font-bold text-gray-900 mb-4">Third Party Links</h2>
-                      <p className="text-sm">Our services may contain links to third party websites. We are not responsible for the privacy practices of these external sites.</p>
-                   </div>
-                   <div>
-                      <h2 className="text-xl font-bold text-gray-900 mb-4">Children’s Privacy</h2>
-                      <p className="text-sm">Virtual Tour 360 is not intended for users under 16 years old. We do not knowingly collect information from children.</p>
-                   </div>
-                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 7. Cookies */}
+          <section id="cookies" className={sectionStyle}>
+            <h2 className={h2Style}>Cookies and Tracking</h2>
+            <p className={pStyle}>
+              We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.
+            </p>
+            <ul className={listStyle}>
+              <li><strong>Session Cookies:</strong> We use Session Cookies to operate our Service.</li>
+              <li><strong>Preference Cookies:</strong> We use Preference Cookies to remember your preferences.</li>
+              <li><strong>Security Cookies:</strong> We use Security Cookies for security purposes.</li>
+            </ul>
+            <p className="text-xs md:text-sm text-gray-500 mt-4 italic">
+              You can instruct your browser to refuse all cookies. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+            </p>
+          </section>
+
+          {/* 8. Compliance */}
+          <section id="compliance" className={sectionStyle}>
+             <h2 className={h2Style}>Compliance & International Transfers</h2>
+             <p className={pStyle}>
+               If you are located outside Sweden and choose to provide information to us, please note that we transfer the data, including Personal Data, to Sweden and process it there.
+             </p>
+             <div className="bg-gray-50 p-4 md:p-5 rounded-lg border-l-4 border-[#2A74ED] mt-4">
+                <h3 className="font-bold text-[#1A1A1A] text-xs md:text-sm uppercase mb-2">GDPR & CCPA</h3>
+                <p className="text-xs md:text-sm text-gray-600">
+                  We are committed to complying with the General Data Protection Regulation (GDPR) for EU users and the California Consumer Privacy Act (CCPA) for California residents.
+                </p>
              </div>
-             <div className="w-full h-px bg-gray-100 mt-12"></div>
           </section>
 
-          {/* Compliance & International */}
-          <section id="compliance" className="mb-16 scroll-mt-32">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Compliance & International</h2>
+          {/* 9. Contact */}
+          <section id="contact" className="mb-10 md:mb-16 scroll-mt-28 md:scroll-mt-32">
+            <h2 className={h2Style}>Contact Us</h2>
+            <p className={pStyle}>
+              If you have any questions about this Privacy Policy, please contact us:
+            </p>
             
-            <div className="grid md:grid-cols-2 gap-10">
-              <div>
-                <h3 className="font-bold text-gray-900 mb-3 text-sm flex items-center gap-2"><Globe size={16} className="text-blue-500"/> GDPR Compliance (EU Users)</h3>
-                <p className="text-sm mb-2 text-gray-600">If you are located in the European Economic Area, we comply with GDPR requirements:</p>
-                <ul className="space-y-2 text-sm">
-                   <li>• Legal basis: Contract performance, legitimate interests, consent</li>
-                   <li>• Data protection officer: support@virtualtour360.ai</li>
-                   <li>• Right to lodge complaints with supervisory authorities</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-gray-900 mb-3 text-sm flex items-center gap-2"><Layers size={16} className="text-blue-500"/> CCPA Compliance (California)</h3>
-                <p className="text-sm mb-2 text-gray-600">California residents have additional rights under CCPA:</p>
-                <ul className="space-y-2 text-sm">
-                   <li>• Right to know what personal information is collected</li>
-                   <li>• Right to deletion</li>
-                   <li>• Right to opt out of sale (we do not sell personal information)</li>
-                   <li>• Right to non discrimination</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-10 bg-gray-50 p-6 rounded-none border-l-4 border-blue-200">
-               <h3 className="font-bold text-gray-900 mb-2 text-sm">International Data Transfers</h3>
-               <p className="text-sm text-gray-600">We are based in Sweden. If you access our services from outside Sweden, your data may be transferred internationally. We ensure adequate safeguards for such transfers.</p>
-            </div>
-            
-            <div className="mt-8">
-               <h3 className="font-bold text-gray-900 mb-2 text-sm">Changes to This Policy</h3>
-               <p className="text-sm text-gray-600">We may update this Privacy Policy periodically. Changes are effective immediately upon posting. We will notify you of significant changes via email or prominent website notice.</p>
-            </div>
-            <div className="w-full h-px bg-gray-100 mt-12"></div>
-          </section>
-
-          {/* Contact Information */}
-          <section id="contact" className="mb-16 scroll-mt-32">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
-            <div className="flex flex-col md:flex-row gap-8 md:gap-20">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 mt-6 md:mt-8 p-6 md:p-8 bg-[#F8F9FC] rounded-2xl border border-gray-100">
                <div>
-                  <h4 className="font-bold text-gray-900 text-sm mb-1">Data Protection Officer</h4>
-                  <p className="text-gray-900 text-sm font-semibold">Things at Web Sweden AB</p>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <h4 className="font-bold text-[#1A1A1A] text-xs md:text-sm uppercase tracking-wide mb-1">Company</h4>
+                  <p className="text-[#2A74ED]  md:text-lg font-bold">Things at Web Sweden AB</p>
+                  <p className="text-gray-600 mt-2 text-sm leading-relaxed">
                     Sockerbruksgatan 7<br/>
                     531 40 Lidköping<br/>
                     Sweden
                   </p>
                </div>
-               <div className="space-y-2">
-                  <p className="flex items-center gap-3 text-sm text-gray-600">
-                    <Mail size={16} className="text-[#2A74ED]" /> 
-                    <a href="mailto:support@virtualtour360.ai" className="hover:text-[#2A74ED] transition-colors">support@virtualtour360.ai</a>
-                  </p>
-                
+               
+               <div className="md:border-l md:border-gray-200 md:pl-8 flex flex-col justify-center pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
+                  <h4 className="font-bold text-[#1A1A1A] text-xs md:text-sm uppercase tracking-wide mb-2">Email Support</h4>
+                  <a href="mailto:support@virtualtour360.ai" className="flex items-center gap-3 text-[#1A1A1A] font-medium hover:text-[#2A74ED] transition-colors text-sm md:">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full border border-gray-200 flex items-center justify-center">
+                      <Mail size={16} className="text-[#2A74ED]" />
+                    </div>
+                    support@virtualtour360.ai
+                  </a>
                </div>
             </div>
           </section>

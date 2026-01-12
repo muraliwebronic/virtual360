@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 // --- PRIMARY SEO METADATA ---
 export const metadata: Metadata = {
-  title: "Features | Virtual Tour 360 - No-Code Builder & Vision Pro Support",
+  title: "Features | Virtual Tour 360 - No-Code Builder & Vision Pro,Meta Quest Support",
   description:
-    "Explore Virtual Tour 360 features: no code builder, Apple Vision Pro support, interactive hotspots, live preview, one click WordPress embed, VR mode. Build immersive tours in minutes.",
+    "Explore Virtual Tour 360 features: no code builder, Apple Vision Pro support ,Meta Quest support, interactive hotspots, live preview, one click WordPress embed, VR mode. Build immersive tours in minutes.",
   keywords: [
     "Virtual Tour Builder Features",
     "Apple Vision Pro WordPress Plugin",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Features | Virtual Tour 360",
     description: "The only no-code builder with native Apple Vision Pro & Meta Quest support. Create professional tours in minutes.",
-    url: "https://wplicense.webronics.com/features",
+    url: "https://app.virtualtour360.ai/features",
     type: "website",
     images: ["/features-og-image.jpg"],
   },

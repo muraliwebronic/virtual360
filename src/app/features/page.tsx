@@ -15,6 +15,7 @@ export default function FeaturesPage() {
         {featuresData.map((feature, index) => (
           <FeatureBlock
             key={index}
+            imgUrl={feature.imgUrl}
             title={feature.title}
             subtitle={feature.subtitle}
             description={feature.description}

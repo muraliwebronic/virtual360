@@ -21,8 +21,8 @@ export default function ContactLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Virtual Tour 360",
-    url: "https://wplicense.webronics.com/contact",
-    logo: "https://wplicense.webronics.com/logo.png",
+    url: "https://app.virtualtour360.ai/contact",
+    logo: "https://app.virtualtour360.ai/logo.png",
     contactPoint: [
       {
         "@type": "ContactPoint",

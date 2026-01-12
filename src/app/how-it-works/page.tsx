@@ -13,7 +13,7 @@ export default function HowItWorksPage() {
         <SectionHeading
           title="Create Stunning Virtual Tours"
           highlight="in 3 Simple Steps"
-          description="No technical skills required. No complex software to master. Just three straightforward steps from your 360 degree images to a published tour."
+          description="No technical skills required. No complex software to master. Just three straightforward steps from your 360 degree images to a published tour"
           size="large"
           gradient={true}
           breakOnDesktop={true}
@@ -28,6 +28,7 @@ export default function HowItWorksPage() {
           number="1"
           title="Upload Your 360 Degree Images"
           subtitle="Start with Your 360 Photography"
+          imgUrl="/How it Works/Upload Your 360 Degree Images - Virtual Tour 360 - Thingsatwe.png"
           // Using simple HTML tags inside the description for the list of cameras
           description={
             <>
@@ -59,7 +60,7 @@ export default function HowItWorksPage() {
           number="2"
           title="Add Scenes & Link with Interactive Hotspots"
           subtitle="Organize and Connect Your Virtual Space"
-          // Breaking down the Navigation vs Info hotspots for readability
+          imgUrl="/How it Works/Add Scenes & Link with Interactive Hotspots - Virtual Tour 360 - Thingsatweb.png.png"
           description={
             <>
               <p className="mb-4">
@@ -105,6 +106,7 @@ export default function HowItWorksPage() {
           number="3"
           title="Publish Everywhere"
           subtitle="Deploy to WordPress and VR Platforms"
+          imgUrl="/How it Works/Publish Everywhere - Virtual Tour 360 - Thingsatwe.png"
           description={
             <>
               <p className="mb-4">
@@ -155,7 +157,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* --- INTERACTIVE DEMO CTA --- */}
-     <HowItWorksDemoCTA />
+      <HowItWorksDemoCTA />
 
       {/* --- BENEFITS SUMMARY --- */}
       <section className="py-24 bg-blue-50/30">
@@ -201,13 +203,10 @@ export default function HowItWorksPage() {
             {/* Subtle gradient overlay for depth, not color change */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            <div className="relative z-10 flex items-center justify-between sm:justify-center gap-4">
-              <div className="flex flex-col items-start text-left">
+            <div className="relative z-10 flex items-center  justify-between sm:justify-center gap-4">
+              <div className="flex flex-col ">
                 <span className="font-bold text-white sm:text-lg leading-tight tracking-tight">
                   Start Building Free
-                </span>
-                <span className="text-[10px] sm:text-[11px] font-medium text-white/80 uppercase tracking-wider">
-                  14-day trial
                 </span>
               </div>
               <ArrowRight
@@ -218,7 +217,9 @@ export default function HowItWorksPage() {
           </Link>
 
           <Link
-            href="/docs"
+            href="/Virtual Tour 360.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 bg-white border border-gray-200 text-[#1A1A1A] rounded-xl font-bold hover:border-blue-300 transition-all"
           >
             View Documentation

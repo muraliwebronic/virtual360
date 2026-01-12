@@ -8,15 +8,15 @@ const FeaturesHero = () => {
         <span>✨ Powerful Features</span>
       </div> */}
       
-      <h1 className="text-4xl md:text-6xl font-bold text-[#1A1A1A] mb-6 tracking-tight leading-[1.1]">
-        Powerful Features for  
-        <span className="text-transparent ml-2 bg-clip-text bg-gradient-to-r from-[#2A74ED] to-[#60a5fa]">
-           Professional Virtual Tours
-        </span>
-      </h1>
+      <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#1A1A1A] mb-6 tracking-tight leading-[1.15]">
+  Powerful Features for{" "}
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A74ED] to-[#60a5fa]">
+    Professional Virtual Tours
+  </span>
+</h1>
       
       <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        Everything you need to create, customize, and deploy immersive 360 degree experiences without touching a single line of code.
+        Everything you need to create, customize, and deploy immersive 360 degree experiences without touching a single line of code
       </p>
     </section>
   );

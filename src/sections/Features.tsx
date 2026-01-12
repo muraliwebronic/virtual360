@@ -9,37 +9,37 @@ const Features = () => {
   // Content matches your optimized SEO requirements
   const features = [
     {
-      icon: "./Icons/360 Tour Website/Group 2560.png",
+      icon: "/Icons/360 Tour Website/Group 2560.png",
       title: "Unlimited Tours",
       description:
         "Create as many virtual tours as you need. No artificial limits on your creativity or client projects.",
     },
     {
-      icon: "./Icons/360 Tour Website/Group 2561.png",
+      icon: "/Icons/360 Tour Website/Group 2561.png",
       title: "Interactive Hotspots",
       description:
         "Guide visitors through your spaces with clickable navigation points and rich information hotspots.",
     },
     {
-      icon: "./Icons/360 Tour Website/Group 2562.png",
+      icon: "/Icons/360 Tour Website/Group 2562.png",
       title: "Live Preview",
       description:
         "See your changes instantly as you build. No waiting, no rendering delays, just immediate visual feedback.",
     },
     {
-      icon: "./Icons/360 Tour Website/Group 2563.png",
+      icon: "/Icons/360 Tour Website/Group 2563.png",
       title: "VR & Spatial Mode",
       description:
         "Native VR headset and Apple Vision Pro support built directly into every tour you create.",
     },
     {
-      icon: "./Icons/360 Tour Website/Group 2564.png",
+      icon: "/Icons/360 Tour Website/Group 2564.png",
       title: "Mobile Responsive",
       description:
         "Your tours look perfect on every device: desktop, tablet, and mobile phones.",
     },
     {
-      icon: "./Icons/360 Tour Website/Group 2566.png",
+      icon: "/Icons/360 Tour Website/Group 2566.png",
       title: "One Click Embed",
       description:
         "Copy a simple WordPress shortcode and paste it anywhere. No complex setup or technical knowledge required.",
@@ -47,7 +47,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="bg-white w-full max-w-7xl mx-auto px-6 lg:px-8 my-24 font-['Poppins']">
+    <section className="bg-white w-full max-w-7xl mx-auto px-6 lg:px-8 my-20 font-['Poppins']">
       <div className="container mx-auto">
         {/* Header Section */}
         <SectionHeading
@@ -55,7 +55,6 @@ const Features = () => {
           highlight="Professional Virtual Tours"
           size="large"
           gradient={true}
-          align="left"
           breakOnDesktop={true}
           className="max-w-3xl mb-10"
         />
@@ -92,11 +91,11 @@ const Features = () => {
 
         {/* --- SEO: Internal Linking Strategy --- */}
         <div className="mt-16 flex justify-center">
-           <ActionButton
-          href="/features" 
-    label="View All Features" 
-    icon={Layers}
-        />
+          <ActionButton
+            href="/features"
+            label="View All Features"
+            icon={Layers}
+          />
         </div>
       </div>
     </section>

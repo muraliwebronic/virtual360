@@ -2,6 +2,7 @@
 import React from "react";
 
 interface FeatureBlockProps {
+  imgUrl:string;
   title: string;
   subtitle: string;
   description: string;
@@ -12,6 +13,7 @@ interface FeatureBlockProps {
 }
 
 const FeatureBlock = ({ 
+  imgUrl,
   title, 
   subtitle, 
   description, 
@@ -60,10 +62,12 @@ const FeatureBlock = ({
              
              {/* Placeholder for actual Feature Images */}
              <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-300 bg-gray-50/50">
-                {/* Visual Hint */}
+                <img src={imgUrl} alt={imgUrl} />
+             </div>
+             {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-300 bg-gray-50/50">
                 <div className="w-16 h-16 rounded-full bg-gray-100 mb-4" />
                 <span className="text-sm font-mono font-medium">Image: {title}</span>
-             </div>
+             </div> */}
 
              {/* Hover Effect Gradient */}
              <div className="absolute inset-0 bg-linear-to-tr from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

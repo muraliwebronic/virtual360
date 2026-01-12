@@ -54,7 +54,8 @@ const ROICalculator = () => {
         <SectionHeading
           title="Calculate Your"
           highlight="Return on Investment"
-          description="See how Virtual Tour 360 pays for itself across different industries."
+          description="See how Virtual Tour 360 pays for itself across different industries"
+          breakOnDesktop
           size="large"
           gradient={true}
           className="mb-16 text-center"

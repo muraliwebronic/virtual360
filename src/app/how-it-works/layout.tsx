@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Create 360 Virtual Tours in 3 Simple Steps",
-    description: "Upload images, add hotspots, and publish to WordPress & Vision Pro instantly.",
-    url: "https://wplicense.webronics.com/how-it-works",
+    description: "Upload images, add hotspots, and publish to WordPress & Vision Pro, Meta Quest instantly.",
+    url: "https://app.virtualtour360.ai/how-it-works",
     type: "website",
     images: ["/how-it-works-og.jpg"],
   },
@@ -30,19 +30,19 @@ const jsonLd = {
       "@type": "HowToStep",
       "name": "Upload 360 Images",
       "text": "Upload equirectangular panoramas or images up to 16K resolution.",
-      "image": "https://wplicense.webronics.com/step1-upload.jpg"
+      "image": "https://app.virtualtour360.ai/step1-upload.jpg"
     },
     {
       "@type": "HowToStep",
       "name": "Add Scenes & Hotspots",
       "text": "Connect scenes with navigation hotspots and add informational pins.",
-      "image": "https://wplicense.webronics.com/step2-hotspots.jpg"
+      "image": "https://app.virtualtour360.ai/step2-hotspots.jpg"
     },
     {
       "@type": "HowToStep",
       "name": "Publish Everywhere",
       "text": "Generate a WordPress shortcode or direct link for Web and VR.",
-      "image": "https://wplicense.webronics.com/step3-publish.jpg"
+      "image": "https://app.virtualtour360.ai/step3-publish.jpg"
     }
   ]
 };

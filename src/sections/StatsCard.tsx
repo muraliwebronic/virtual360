@@ -103,9 +103,9 @@ const StatsCard = () => {
                     isVisible
                   )}
                 </span>
-                <span>{stat.suffix}</span>
+                <span className="ml-2">{stat.suffix}</span>
               </h3>
-              <p className="text-blue-100 text-lg font-medium opacity-90 text-center">
+              <p className="text-blue-100  text-lg font-medium opacity-90 text-center">
                 {stat.label}
               </p>
             </div>

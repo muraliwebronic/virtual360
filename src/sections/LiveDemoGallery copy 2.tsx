@@ -22,21 +22,21 @@ const LiveDemoGallery = () => {
       category: "Real Estate",
       title: "Modern Apartment Walkthrough",
       description: "High-fidelity interior tour with hotspot navigation.",
-      embedUrl: "https://wplicense.webronics.com/real-estate/",
+      embedUrl: "https://app.virtualtour360.ai/real-estate/",
     },
     {
       id: "demo-ho",
       category: "Hospitality",
       title: "Luxury Hotel Suite",
       description: "Immersive booking preview for potential guests.",
-      embedUrl: "https://wplicense.webronics.com/hospitality/",
+      embedUrl: "https://app.virtualtour360.ai/hospitality/",
     },
     {
       id: "demo-rt",
       category: "Retail",
       title: "Automotive Showroom",
       description: "Interactive product showcase with detail popups.",
-      embedUrl: "https://wplicense.webronics.com/retail/",
+      embedUrl: "https://app.virtualtour360.ai/retail/",
     },
   ];
 

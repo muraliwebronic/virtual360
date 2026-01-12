@@ -44,7 +44,7 @@ const Pricing = () => {
       period: "/ month",
       billingFootnote: isAnnual ? "Billed $19.99 yearly" : "Billed monthly",
       trialPeriod: "14 days - Free Trial",
-      headerImage: "./Icons/360 Tour Website/motorcycle_3541614.png",
+      headerImage: "/Icons/360 Tour Website/motorcycle_3541614.png",
       isPopular: false,
       features: [
         { text: "Maximum 1 Tour", included: true },
@@ -73,7 +73,7 @@ const Pricing = () => {
       period: "/ month",
       billingFootnote: isAnnual ? "Billed $69.99 yearly" : "Billed monthly",
       trialPeriod: "7 days - Free Trial",
-      headerImage: "./Icons/360 Tour Website/Pro.png",
+      headerImage: "/Icons/360 Tour Website/Pro.png",
       isPopular: true,
       features: [
         { text: "Unlimited Tours", included: true },

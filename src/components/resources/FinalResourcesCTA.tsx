@@ -33,7 +33,8 @@ const FinalResourcesCTA = () => {
 
         {/* Secondary Action: Clean White Pill */}
         <Link
-          href="/how-it-works"
+          href="/Virtual Tour 360.pdf"
+          target="_blank"
           className="group w-full sm:w-auto px-10 py-5 bg-white border border-gray-200 text-[#1A1A1A] rounded-[2rem] font-bold text-lg hover:bg-gray-50 hover:border-gray-300 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-[0.98]"
         >
           <FileText size={20} className="text-gray-400 group-hover:text-[#2A74ED] transition-colors" />

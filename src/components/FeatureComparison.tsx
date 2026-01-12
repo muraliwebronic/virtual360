@@ -87,7 +87,7 @@ const FeatureComparison = () => {
       highlight: false,
     },
     {
-      name: "Spatial Mode (Vision Pro & VR)",
+      name: "Spatial Mode (Vision Pro, Meta Quest & VR)",
       standard: true,
       pro: true,
       highlight: false,
@@ -108,7 +108,7 @@ const FeatureComparison = () => {
         </div>
 
         {/* Comparison Table */}
-        <div className="overflow-hidden shadow-lg rounded-[20px] border border-gray-100">
+        <div className=" overflow-x-auto md:overflow-hidden shadow-lg rounded-[20px] border border-gray-100">
           <table className="w-full border-collapse bg-white text-left text-sm text-gray-600">
             {/* Table Header */}
             <thead className="bg-[#2A74ED] text-white">

@@ -1,6 +1,9 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { ArrowRight, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { 
+  ArrowRight, Loader2, CheckCircle2, AlertCircle, 
+  Briefcase, LifeBuoy, Handshake, Mail 
+} from "lucide-react";
 
 type ContactFormData = {
   first_name: string;
@@ -13,20 +16,31 @@ type ContactFormData = {
   message: string;
 };
 
+// --- REDESIGNED DEPARTMENT ITEM ---
 const DepartmentItem: React.FC<{
   title: string;
   description: string;
   email: string;
-}> = ({ title, description, email }) => (
-  <div className="flex flex-col space-y-2">
-    <h4 className="text-lg font-bold text-gray-900">{title}</h4>
-    <p className="text-sm text-gray-600">{description}</p>
-    <a
-      href={`mailto:${email}`}
-      className="text-sm font-medium text-blue-600 hover:underline"
-    >
-      {email}
-    </a>
+  icon: React.ReactNode;
+}> = ({ title, description, email, icon }) => (
+  <div className="group flex flex-col md:flex-row items-start gap-5 p-6 bg-white border border-gray-100 rounded-2xl hover:border-blue-200 hover:shadow-sm transition-all duration-300">
+    {/* Icon Container */}
+    <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2A74ED] group-hover:scale-110 transition-transform">
+      {icon}
+    </div>
+    
+    {/* Content */}
+    <div>
+      <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">{title}</h4>
+      <p className="text-sm text-gray-500 mb-4 leading-relaxed">{description}</p>
+      <a
+        href={`mailto:${email}`}
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[#2A74ED] hover:text-[#1a5fc7] transition-colors"
+      >
+        <Mail size={14} />
+        {email}
+      </a>
+    </div>
   </div>
 );
 
@@ -45,30 +59,23 @@ const ContactSection: React.FC = () => {
 
   // 2. UI & Error State
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   // 3. Manual Validation Logic
   const validate = (): boolean => {
     const newErrors: Partial<ContactFormData> = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!formData.first_name.trim())
-      newErrors.first_name = "First name is required";
-    if (!formData.last_name.trim())
-      newErrors.last_name = "Last name is required";
+    if (!formData.first_name.trim()) newErrors.first_name = "First name is required";
+    if (!formData.last_name.trim()) newErrors.last_name = "Last name is required";
     if (formData.last_name.trim().length < 2) {
       newErrors.last_name = "Last name must be at least 2 characters";
     }
-    if (!emailRegex.test(formData.email))
-      newErrors.email = "Invalid email address";
-    if (formData.mobile.length < 5)
-      newErrors.mobile = "Valid mobile number is required";
+    if (!emailRegex.test(formData.email)) newErrors.email = "Invalid email address";
+    if (formData.mobile.length < 5) newErrors.mobile = "Valid mobile number is required";
     if (!formData.country) newErrors.country = "Please select a country";
     if (!formData.help_type) newErrors.help_type = "Please select a topic";
-    if (formData.message.length < 10)
-      newErrors.message = "Message must be at least 10 characters";
+    if (formData.message.length < 10) newErrors.message = "Message must be at least 10 characters";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -80,7 +87,6 @@ const ContactSection: React.FC = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user types
     if (errors[name as keyof ContactFormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -89,21 +95,17 @@ const ContactSection: React.FC = () => {
   // 5. Submit to API
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
     if (!validate()) return;
-
     setStatus("loading");
 
     try {
       const response = await fetch(
-        "https://wplicense.webronics.com/wp-json/custom-contact/v1/submit",
+        "https://app.virtualtour360.ai/wp-json/custom-contact/v1/submit",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-API-Key":
-              "300427c1c6c781809c9d605146c993c69b8bd1ba85083b6fe52ac7db93ea82f6",
-            // "X-API-Key": process.env.NEXT_PUBLIC_X_API || "300427c1c6c781809c9d605146c993c69b8bd1ba85083b6fe52ac7db93ea82f6",
+            "X-API-Key": "300427c1c6c781809c9d605146c993c69b8bd1ba85083b6fe52ac7db93ea82f6",
           },
           body: JSON.stringify({
             ...formData,
@@ -134,8 +136,9 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section className="container mx-auto max-w-7xl px-6 py-24">
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+    <section className="container mx-auto max-w-7xl px-6 py-24 font-['Poppins']">
+      <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 items-start">
+        
         {/* Form Side */}
         <div className="lg:col-span-7 rounded-[3rem] border border-gray-100 bg-white p-8 shadow-sm md:p-12">
           <h3 className="mb-8 text-2xl font-bold text-gray-900">
@@ -262,16 +265,16 @@ const ContactSection: React.FC = () => {
               className="flex w-full items-center justify-center gap-2 rounded-4xl bg-[#2A74ED] py-5 text-lg font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-[#1a5fc7] disabled:opacity-70"
             >
               {status === "loading" ? (
-                <Loader2 className="h-5 w-5 animate-spin" />
+                <Loader2 className="h-5  w-5 animate-spin" />
               ) : (
                 <>
-                  Submit Message
+                <span className=" max-sm:text-sm "> Submit Message</span>
+                 
                   <ArrowRight className="h-5 w-5" />
                 </>
               )}
             </button>
 
-            {/* Status Indicators */}
             {status === "success" && (
               <div className="flex items-center gap-2 text-green-600 justify-center font-medium">
                 <CheckCircle2 className="h-5 w-5" /> Message sent successfully!
@@ -279,33 +282,43 @@ const ContactSection: React.FC = () => {
             )}
             {status === "error" && (
               <div className="flex items-center gap-2 text-red-600 justify-center font-medium">
-                <AlertCircle className="h-5 w-5" /> Submission failed. Please
-                try again.
+                <AlertCircle className="h-5 w-5" /> Submission failed. Please try again.
               </div>
             )}
           </form>
         </div>
 
-        {/* Departments Side */}
-        <div className="lg:col-span-5 space-y-8 pt-8 lg:pt-0">
-          <h3 className="mb-8 text-2xl font-bold text-gray-900">
-            Department Contacts
-          </h3>
-          <DepartmentItem
-            title="Sales & Pre-Sales"
-            description="Questions about plans or custom quotes?"
-            email="sales@virtualtour360.ai"
-          />
-          <DepartmentItem
-            title="Technical Support"
-            description="Help with tour creation or WordPress integration."
-            email="support@virtualtour360.ai"
-          />
-          <DepartmentItem
-            title="Partnerships"
-            description="Reseller and enterprise licensing inquiries."
-            email="sales@virtualtour360.ai"
-          />
+        {/* Departments Side - ENHANCED DESIGN */}
+        <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-8 pt-8 lg:pt-0">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              Department Contacts
+            </h3>
+            <p className="text-gray-500 text-sm">
+              Connect directly with the team best suited to help you
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <DepartmentItem
+              title="Sales & Pre-Sales"
+              description="Questions about plans, pricing, or custom quotes for your business?"
+              email="sales@virtualtour360.ai"
+              icon={<Briefcase size={24} />}
+            />
+            <DepartmentItem
+              title="Technical Support"
+              description="Need help with tour creation, hosting, or WordPress integration?"
+              email="support@virtualtour360.ai"
+              icon={<LifeBuoy size={24} />}
+            />
+            <DepartmentItem
+              title="Partnerships"
+              description="Reseller opportunities and enterprise licensing inquiries."
+              email="sales@virtualtour360.ai"
+              icon={<Handshake size={24} />}
+            />
+          </div>
         </div>
       </div>
     </section>

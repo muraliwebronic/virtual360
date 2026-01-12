@@ -24,14 +24,14 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
       {/* Header (Question + Icon) */}
       <div className="flex items-center justify-between gap-4">
         <h3
-          className={`font-semibold text-lg transition-colors duration-300 ${
+          className={`font-semibold md:text-lg transition-colors duration-300 ${
             isOpen ? "text-[#2A74ED]" : "text-[#1A1A1A]"
           }`}
         >
           {question}
         </h3>
         <div
-          className={`flex-shrink-0 transition-colors duration-300 ${
+          className={`hrink-0 transition-colors duration-300 ${
             isOpen ? "text-[#2A74ED]" : "text-gray-400"
           }`}
         >

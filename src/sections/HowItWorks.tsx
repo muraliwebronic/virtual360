@@ -8,22 +8,22 @@ import ActionButton from "@/components/ui/ActionButtons";
 const HowItWorks = () => {
   const steps = [
     {
-      icon: "./Icons/360 Tour Website/Group 2565.png",
+      icon: "/Icons/360 Tour Website/Group 2565.png",
       title: "Upload Your 360° Images",
       description:
-        "Upload your 360° panorama images or regular photos to get started.",
+        "Upload your 360° panorama images or regular photos to get started",
     },
     {
-      icon: "./Icons/360 Tour Website/Group 2566.png",
+      icon: "/Icons/360 Tour Website/Group 2566.png",
       title: "Add Scenes & Hotspots",
       description:
-        "Organize your images into scenes and connect them with navigation hotspots.",
+        "Organize your images into scenes and connect them with navigation hotspots",
     },
     {
-      icon: "./Icons/360 Tour Website/Group 2567.png",
+      icon: "/Icons/360 Tour Website/Group 2567.png",
       title: "Publish Everywhere",
       description:
-        "Embed on WordPress with a simple shortcode, or launch immersive mode for Vision Pro & VR users.",
+        "Embed on WordPress with a simple shortcode, or launch immersive mode for Vision Pro, Meta Quest & VR users",
     },
   ];
 
@@ -31,11 +31,11 @@ const HowItWorks = () => {
     <section className="bg-white w-full max-w-7xl mx-auto px-6 lg:px-8 my-20 font-['Poppins']">
       {/* 1. Section Header (Replaced with Component) */}
       <SectionHeading
-        title="How It"
-        highlight="Works"
-        description="Create stunning virtual tours in just 3 simple steps. No technical skills required."
-        size="normal"
-        gradient={true}
+        title=""
+        highlight="How It Works"
+        description="Create stunning virtual tours in just 3 simple steps. No technical skills required"
+        size="large"
+        gradient
         className="mb-16 md:mb-24"
       />
 
@@ -95,7 +95,7 @@ const HowItWorks = () => {
 
       {/* 4. Trust Badges */}
       <div className="w-full max-w-4xl mx-auto mt-8 border rounded-xl border-gray-100 py-6">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16">
+        <div className="flex flex-col md:flex-row items-start px-3 md:items-center justify-center gap-6 md:gap-16">
           {/* Item 1 */}
           <div className="flex items-center gap-2.5 text-gray-700">
             <Layout className="w-5 h-5 text-gray-400" />

@@ -5,7 +5,7 @@ import FeaturesCTA from "@/components/features/FeaturesCTA";
 
 export default function UseCasesPage() {
   return (
-    <main className="w-full bg-white min-h-screen">
+    <main className="w-full bg-white ">
       
       {/* 1. Hero */}
       {/* <UseCasesHero /> */}

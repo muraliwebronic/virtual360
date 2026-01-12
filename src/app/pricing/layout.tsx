@@ -8,13 +8,14 @@ export const metadata: Metadata = {
     "Virtual Tour Plugin Pricing",
     "WordPress 360 Builder Cost",
     "Cheap Apple Vision Pro Builder",
+    "Cheap Meta Quest Builder",
     "No-Code VR Software Trial",
     "Spatial Web Pricing Plans",
   ],
   openGraph: {
     title: "Pricing Plans | Virtual Tour 360",
     description: "Start your 14-day free trial. Build immersive tours for WordPress and Vision Pro at the best price.",
-    url: "https://wplicense.webronics.com/pricing",
+    url: "https://app.virtualtour360.ai/pricing",
     type: "website",
   },
 };

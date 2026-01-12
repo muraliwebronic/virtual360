@@ -3,6 +3,7 @@ import React from "react";
 import { CheckCircle2, Info } from "lucide-react";
 
 interface StepBlockProps {
+  imgUrl:string;
   number: string;
   title: string;
   subtitle: string;
@@ -15,6 +16,7 @@ interface StepBlockProps {
 }
 
 const StepBlock = ({ 
+  imgUrl,
   number, 
   title, 
   subtitle, 
@@ -32,7 +34,7 @@ const StepBlock = ({
         <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-200 group">
            {/* Placeholder for Step Image */}
            <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gray-50">
-              <span className="font-mono text-sm font-medium">Visual: {title}</span>
+            <img src={imgUrl} alt={imgUrl} />
            </div>
            {/* Step Badge */}
            <div className="absolute top-4 left-4 w-12 h-12 bg-[#2A74ED] rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md z-10">

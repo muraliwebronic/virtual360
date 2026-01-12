@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Check, X, Sparkles, AlertCircle } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export type planType = {
   title: string;
@@ -19,93 +20,96 @@ export type planType = {
   }[];
   buttonText: string;
   isEnterprise?: boolean;
-  url:string
+  url: string;
 };
 
 const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [isAnnual, setIsAnnual] = useState(true);
 
-   const plans: planType[] = [
-      {
-        title: "Standard",
-        description:
-          "Perfect for small businesses creating multiple tours and scenes",
-        // === STANDARD TIER DATA (From Screenshot) ===
-        // Annual: $19.99/yr ($1.67/mo). Savings: 72% OFF vs Monthly ($5.99/mo)
-        // Monthly: $5.99/mo. Regular: $7.99/mo. Savings: 13% OFF
-        price: isAnnual ? "$1.67" : "$5.99",
-  
-        // Annual Anchor: Comparing against Monthly Promo ($5.99) shows the 72% savings
-        // Monthly Anchor: Comparing against Regular Monthly ($7.99) shows 13% savings
-        originalPrice: isAnnual ? "$5.99" : "$7.99",
-  
-        // Exact percentages from the screenshot summary lines
-        discountBadge: isAnnual ? "72% OFF" : "13% OFF",
-  
-        period: "/ month",
-        billingFootnote: isAnnual ? "Billed $19.99 yearly" : "Billed monthly",
-        trialPeriod: "14 days - Free Trial",
-        headerImage: "./Icons/360 Tour Website/motorcycle_3541614.png",
-        isPopular: false,
-        features: [
-          { text: "Maximum 1 Tour", included: true },
-          { text: "Maximum 5 Scenes", included: true },
-          { text: "Maximum 5 Hotspots", included: true },
-          { text: "Maximum 1 Site", included: true },
-        ],
-        buttonText: "Start 14-Day Free Trial",
-        url:"https://wplicense.webronics.com/checkout/?empty-cart&add-to-cart=891"
-      },
-      {
-        title: "Pro",
-        description:
-          "Unlock unlimited potential for agencies, photographers, and growing businesses",
-        // === PRO TIER DATA (From Screenshot) ===
-        // Annual: $69.99/yr ($5.83/mo). Savings: 42% OFF vs Monthly ($9.99/mo)
-        // Monthly: $9.99/mo. Regular: $11.99/mo. Savings: 17% OFF
-        price: isAnnual ? "$5.83" : "$9.99",
-  
-        // Annual Anchor: Comparing against Monthly Promo ($9.99) shows the 42% savings
-        // Monthly Anchor: Comparing against Regular Monthly ($11.99) shows 17% savings
-        originalPrice: isAnnual ? "$9.99" : "$11.99",
-  
-        // Exact percentages from the screenshot summary lines
-        discountBadge: isAnnual ? "42% OFF" : "17% OFF",
-  
-        period: "/ month",
-        billingFootnote: isAnnual ? "Billed $69.99 yearly" : "Billed monthly",
-        trialPeriod: "7 days - Free Trial",
-        headerImage: "./Icons/360 Tour Website/Pro.png",
-        isPopular: true,
-        features: [
-          { text: "Unlimited Tours", included: true },
-          { text: "Unlimited Scenes", included: true },
-          { text: "Unlimited Hotspots", included: true },
-          { text: "Maximum 3 Sites", included: true },
-        ],
-        buttonText: "Start 7-Day Free Trial",
-        url:"https://wplicense.webronics.com/checkout/?empty-cart&add-to-cart=189"
-      },
-    ];
+  const plans: planType[] = [
+    {
+      title: "Standard",
+      description:
+        "Perfect for small businesses creating multiple tours and scenes",
+      // === STANDARD TIER DATA (From Screenshot) ===
+      // Annual: $19.99/yr ($1.67/mo). Savings: 72% OFF vs Monthly ($5.99/mo)
+      // Monthly: $5.99/mo. Regular: $7.99/mo. Savings: 13% OFF
+      price: isAnnual ? "$1.67" : "$5.99",
+
+      // Annual Anchor: Comparing against Monthly Promo ($5.99) shows the 72% savings
+      // Monthly Anchor: Comparing against Regular Monthly ($7.99) shows 13% savings
+      originalPrice: isAnnual ? "$5.99" : "$7.99",
+
+      // Exact percentages from the screenshot summary lines
+      discountBadge: isAnnual ? "72% OFF" : "13% OFF",
+
+      period: "/ month",
+      billingFootnote: isAnnual ? "Billed $19.99 yearly" : "Billed monthly",
+      trialPeriod: "14 days - Free Trial",
+      headerImage: "/Icons/360 Tour Website/motorcycle_3541614.png",
+      isPopular: false,
+      features: [
+        { text: "Maximum 1 Tour", included: true },
+        { text: "Maximum 5 Scenes", included: true },
+        { text: "Maximum 5 Hotspots", included: true },
+        { text: "Maximum 1 Site", included: true },
+      ],
+      buttonText: "Start 14-Day Free Trial",
+      url: isAnnual
+        ? "https://app.virtualtour360.ai/checkout/?empty-cart&add-to-cart=891"
+        : "https://app.virtualtour360.ai/checkout/?empty-cart&add-to-cart=1625",
+    },
+    {
+      title: "Pro",
+      description:
+        "Unlock unlimited potential for agencies, photographers, and growing businesses",
+      // === PRO TIER DATA (From Screenshot) ===
+      // Annual: $69.99/yr ($5.83/mo). Savings: 42% OFF vs Monthly ($9.99/mo)
+      // Monthly: $9.99/mo. Regular: $11.99/mo. Savings: 17% OFF
+      price: isAnnual ? "$5.83" : "$9.99",
+
+      // Annual Anchor: Comparing against Monthly Promo ($9.99) shows the 42% savings
+      // Monthly Anchor: Comparing against Regular Monthly ($11.99) shows 17% savings
+      originalPrice: isAnnual ? "$9.99" : "$11.99",
+
+      // Exact percentages from the screenshot summary lines
+      discountBadge: isAnnual ? "42% OFF" : "17% OFF",
+
+      period: "/ month",
+      billingFootnote: isAnnual ? "Billed $69.99 yearly" : "Billed monthly",
+      trialPeriod: "7 days - Free Trial",
+      headerImage: "/Icons/360 Tour Website/Pro.png",
+      isPopular: true,
+      features: [
+        { text: "Unlimited Tours", included: true },
+        { text: "Unlimited Scenes", included: true },
+        { text: "Unlimited Hotspots", included: true },
+        { text: "Maximum 3 Sites", included: true },
+      ],
+      buttonText: "Start 7-Day Free Trial",
+      url: isAnnual
+        ? "https://app.virtualtour360.ai/checkout/?empty-cart&add-to-cart=189"
+        : "https://app.virtualtour360.ai/checkout/?empty-cart&add-to-cart=1627",
+    },
+  ];
 
   return (
-    <section className="bg-gray-50  font-['Poppins']">
+    <section className="bg-gray-50  pb-10 font-['Poppins']">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-5 tracking-tight">
-            Simple Pricing <br />
-            <span className="text-[#2A74ED]">Maximum ROI</span>
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Whether you are a freelancer or an XR studio, we have a plan that
-            pays for itself with just one client project
-          </p>
-        </div>
+        <SectionHeading
+          title="Simple Pricing"
+          highlight="Maximum ROI"
+          description="Whether you are a freelancer or an XR studio, we have a plan that pays for itself with just one client project"
+          size="medium"
+          align="center"
+          breakOnDesktop
+          className="mb-12"
+        />
 
         {/* Toggle Switch */}
         {/* Toggle Switch Container */}
-        {/* <div className="flex justify-center items-center mb-16 space-x-4">
+        <div className="flex justify-center items-center mb-16 space-x-4">
           <span
             className={`text-sm  font-medium transition-colors duration-300 ${
               !isAnnual ? "text-[#2A74ED] font-bold" : "text-gray-500"
@@ -143,8 +147,7 @@ const Pricing = () => {
               </span>
             </div>
           </div>
-        </div> */}
-
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-start relative max-w-5xl mx-auto">
           {plans.map((plan, index) => (
@@ -317,7 +320,7 @@ const PricingCard = ({ plan }: { plan: planType }) => {
 
       {/* CTA Button */}
       <a
-       href={plan.url}
+        href={plan.url}
         className={`w-full py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center transition-all duration-300 ${
           isPopular
             ? "bg-[#2A74ED] text-white hover:bg-[#1a5fc7] shadow-lg shadow-blue-500/30"

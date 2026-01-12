@@ -13,37 +13,37 @@ const IndustriesSection = () => {
   const industries = [
     {
       title: "Retail & Showrooms",
-      icon: "./Icons/360 Tour Website/Group 104.png",
+      icon: "/Icons/360 Tour Website/Group 104.png",
       anchor: "retail",
     },
     {
       title: "Real Estate",
-      icon: "./Icons/360 Tour Website/group-151.png",
+      icon: "/Icons/360 Tour Website/group-151.png",
       anchor: "real-estate",
     },
     {
       title: "Schools & University",
-      icon: "./Icons/360 Tour Website/group-150.png",
+      icon: "/Icons/360 Tour Website/group-150.png",
       anchor: "education",
     },
     {
       title: "Hotels & Resorts",
-      icon: "./Icons/360 Tour Website/Group 73.png",
+      icon: "/Icons/360 Tour Website/Group 73.png",
       anchor: "hospitality",
     },
     {
       title: "Museums & Exhibitions",
-      icon: "./Icons/360 Tour Website/Group 98.png",
+      icon: "/Icons/360 Tour Website/Group 98.png",
       anchor: "museums",
     },
     {
       title: "Offices & Workspaces",
-      icon: "./Icons/360 Tour Website/group-152.png",
+      icon: "/Icons/360 Tour Website/group-152.png",
       anchor: "real-estate", // Maps to Real Estate tab
     },
     {
       title: "Architecture & Interiors",
-      icon: "./Icons/360 Tour Website/Group 149.png",
+      icon: "/Icons/360 Tour Website/Group 149.png",
       anchor: "architecture",
     },
   ];

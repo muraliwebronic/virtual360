@@ -13,7 +13,8 @@ const FeaturesCTA = () => {
         <SectionHeading 
           title="Explore More"
           highlight="Resources"
-          description="Everything you need to understand our detailed capabilities and industry-specific applications."
+          description="Everything you need to understand our detailed capabilities and industry-specific applications"
+          breakOnDesktop
           size="normal"
           className="mb-12 text-center"
         />
@@ -26,7 +27,7 @@ const FeaturesCTA = () => {
                <Layout size={24} />
             </div>
             <span className="font-bold text-[#1A1A1A] text-lg mb-2">How It Works</span>
-            <p className="text-sm text-gray-500">View our step-by-step process from upload to publish.</p>
+            <p className="text-sm text-gray-500">View our step-by-step process from upload to publish</p>
           </Link>
 
           {/* Link: Use Cases - "industry specific applications" */}
@@ -35,7 +36,7 @@ const FeaturesCTA = () => {
                <Play size={24} />
             </div>
             <span className="font-bold text-[#1A1A1A] text-lg mb-2">Use Cases</span>
-            <p className="text-sm text-gray-500">Explore industry-specific applications for your business.</p>
+            <p className="text-sm text-gray-500">Explore industry-specific applications for your business</p>
           </Link>
 
           {/* Link: Pricing - "compare Standard vs Pro features" */}
@@ -44,7 +45,7 @@ const FeaturesCTA = () => {
                <Coins size={24} />
             </div>
             <span className="font-bold text-lg mb-2">Pricing Plans</span>
-            <p className="text-sm text-white/80">Compare Standard vs. Pro features and find your ROI.</p>
+            <p className="text-sm text-white/80">Compare Standard vs. Pro features and find your ROI</p>
             <ArrowRight size={20} className="mt-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           

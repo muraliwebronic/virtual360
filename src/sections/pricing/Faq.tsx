@@ -25,16 +25,16 @@ export default function Faq() {
           <div className="flex flex-col gap-3">
             <div className="md:sticky md:top-32">
               <div className="flex flex-col gap-5 text-left">
-                <span className="w-fit rounded-full bg-[#ECFDF3] border border-[#D1FADF] px-4 py-1.5 text-sm font-semibold text-[#027A48] shadow-sm">
+                {/* <span className="w-fit rounded-full bg-[#ECFDF3] border border-[#D1FADF] px-4 py-1.5 text-sm font-semibold text-[#027A48] shadow-sm">
                   Support
-                </span>
+                </span> */}
                 <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A] leading-tight tracking-tight">
                   Got Questions? <br />
                   <span className="text-[#2A74ED]">We have answers</span>
                 </h2>
                 <p className="text-gray-500 text-lg max-w-sm mb-2">
                   Everything you need to know about building spatial tours on
-                  WordPress.
+                  WordPress
                 </p>
 
                 {/* Quick Link Added Here */}

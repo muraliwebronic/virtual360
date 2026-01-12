@@ -22,21 +22,21 @@ const LiveDemoGallery = () => {
       category: "Real Estate",
       title: "Modern Apartment Walkthrough",
       description: "High-fidelity interior tour with hotspot navigation.",
-      embedUrl: "https://wplicense.webronics.com/real-estate/",
+      embedUrl: "https://app.virtualtour360.ai/real-estate/",
     },
     {
       id: "demo-ho",
       category: "Hospitality",
       title: "Luxury Hotel Suite",
       description: "Immersive booking preview for potential guests.",
-      embedUrl: "https://wplicense.webronics.com/hospitality/",
+      embedUrl: "https://app.virtualtour360.ai/hospitality/",
     },
     {
       id: "demo-rt",
       category: "Retail",
       title: "Automotive Showroom",
       description: "Interactive product showcase with detail popups.",
-      embedUrl: "https://wplicense.webronics.com/retail/",
+      embedUrl: "https://app.virtualtour360.ai/retail/",
     },
   ];
 
@@ -79,7 +79,7 @@ const LiveDemoGallery = () => {
   };
 
   return (
-    <section className="bg-white py-24 font-['Poppins']">
+    <section id="demo-tour" className="bg-white pt-15 pb-24 font-['Poppins']">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -89,11 +89,11 @@ const LiveDemoGallery = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A] mb-6">
-            Interactive <span className="text-[#2A74ED]">Virtual Tours</span>
+            Interactive <br /> <span className="text-[#2A74ED]">Virtual Tours</span>
           </h2>
           <p className="text-gray-500 text-lg">
             Explore our immersive 3D environments for Real Estate, Hospitality,
-            and Retail directly in your browser.
+            and Retail directly in your browser
           </p>
         </div>
 

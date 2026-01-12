@@ -11,7 +11,7 @@ const USPShowcase = () => {
       title: "Clean UI & Simple Workflow",
       description: "Drag, drop, and link scenes in minutes. Our no-code editor is designed for speed, not complexity",
       icon: <Monitor size={20} />,
-      visual: "./image/image (4).png", // Represents the Editor/Web View
+      visual: "/Home/Plugin - Virtual Tour 360 - Thingsatweb.png.png",
       tag: "Web Editor",
     },
     {
@@ -19,26 +19,25 @@ const USPShowcase = () => {
       title: "Fast Embedding",
       description: "No heavy iframes or complex setups. Just copy one shortcode and your tour is live on WordPress",
       icon: <Copy size={20} />,
-      visual: "./image/image (5).png", // Represents the Link/Embed action
-      tag: "WordPress Ready",
+      visual: "/Home/Embed Code - Virtual Tour 360 - Thingsatweb.png.png", 
     },
     {
       id: "spatial",
       title: "360° → VR-Ready Pipeline",
       description: "The only plugin that automatically converts your web tours into spatial assets for Apple Vision Pro",
       icon: <Glasses size={20} />,
-      visual: "./image/image (6).png", // Represents the VR/Spatial View
+      visual: "/Home/Info - 360 Viewer - Virtual Tour 360 - Thingsatweb.png.png", 
       tag: "Vision Pro Ready",
     },
   ];
 
   return (
-    <section className="bg-white w-full max-w-7xl mx-auto px-6 lg:px-8 py-24 font-['Poppins']">
+    <section className="bg-white w-full max-w-7xl mx-auto px-6 lg:px-8 pt-15 pb-20 font-['Poppins']">
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-20">
         <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A] mb-6 tracking-tight">
-          One Workflow <span className="text-[#2A74ED]">Dual Output</span>
+          One Workflow <br /> <span className="text-[#2A74ED]">Dual Output</span>
         </h2>
         <p className="text-gray-500 text-lg leading-relaxed">
           Bridge the gap between traditional web and the spatial web. Build once, deploy everywhere

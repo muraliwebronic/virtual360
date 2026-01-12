@@ -21,12 +21,12 @@ const ActionButton = ({ href, label, icon: Icon }: MinimalActionProps) => {
       {Icon && (
         <Icon 
           size={20} 
-          className="text-gray-400 group-hover:text-[#2A74ED] transition-colors duration-300" 
+          className="text-gray-400 hidden md:block group-hover:text-[#2A74ED] transition-colors duration-300" 
         />
       )}
 
       {/* Label (Dark gray to Blue) */}
-      <span className="text-[#1A1A1A] font-semibold text-lg group-hover:text-[#2A74ED] transition-colors duration-300">
+      <span className="text-[#2A74ED] font-semibold text-xs md:text-lg group-hover:text-[#2A74ED] transition-colors duration-300">
         {label}
       </span>
 

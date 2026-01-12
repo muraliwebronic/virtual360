@@ -10,27 +10,19 @@ import FinalPricingCTA from "@/sections/pricing/FinalPricingCTA";
 
 export default function PricingPage() {
   return (
-    <main className="pt-32 pb-20 px-6 bg-gray-50">
-      {/* 1. Pricing Plans */}
+    <main className="pt-32  bg-gray-50">
       <section id="plans">
         <Pricing />
       </section>
 
-      {/* 2. Detailed Feature Comparison */}
       <FeatureComparison />
 
-      {/* 3. ROI Calculator (The Business Case) */}
       <ROICalculator />
 
-      {/* 4. Social Proof (Trust Building) */}
+      <Faq />
       <PricingSocialProof />
 
-      {/* 5. FAQ (Removing Friction) */}
-      <Faq />
-
-      {/* 6. FINAL CONVERSION CTA */}
-
-     <FinalPricingCTA />
+      <FinalPricingCTA />
     </main>
   );
 }

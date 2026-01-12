@@ -23,9 +23,9 @@ const FinalPricingCTA = () => {
 
         {/* Section Heading Integration */}
         <SectionHeading
-          title="Ready to"
-          highlight="Get Started?"
-          description="Only $0.50 refundable verification charge. No long-term commitment. Cancel anytime."
+          title=""
+          highlight="Ready to Get Started?"
+          description="Only $0.50 refundable verification charge No long-term commitment. Cancel anytime"
           size="large"
           gradient={true}
           className="mb-12"
@@ -33,8 +33,8 @@ const FinalPricingCTA = () => {
 
         {/* Buttons Section */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-          <Link
-            href="/checkout/standard"
+          <a
+            href="https://app.virtualtour360.ai/checkout/?empty-cart&add-to-cart=891"
             className="group w-full sm:w-auto px-10 py-5 bg-white text-[#1A1A1A] border border-gray-100 rounded-[2rem] font-bold text-lg hover:border-gray-200 hover:shadow-xl transition-all flex items-center justify-center gap-3"
           >
             Start Standard Trial
@@ -42,10 +42,10 @@ const FinalPricingCTA = () => {
               size={20}
               className="text-[#2A74ED] group-hover:translate-x-1 transition-transform"
             />
-          </Link>
+          </a>
 
           <Link
-            href="/checkout/pro"
+            href="https://app.virtualtour360.ai/checkout/?empty-cart&add-to-cart=189"
             className="group w-full sm:w-auto px-10 py-5 bg-[#2A74ED] text-white rounded-[2rem] font-bold text-lg hover:bg-[#1a5fc7] transition-all flex items-center justify-center gap-3 shadow-lg shadow-blue-500/20"
           >
             Start Pro Trial

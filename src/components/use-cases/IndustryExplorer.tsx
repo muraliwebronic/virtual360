@@ -81,7 +81,7 @@ const IndustryExplorer = () => {
       case "email":
         return `mailto:?subject=${text}&body=${url}`;
       default:
-        return "#";
+        return "";
     }
   };
 
@@ -96,6 +96,9 @@ const IndustryExplorer = () => {
       }
     }
   }, []);
+useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section
@@ -105,13 +108,12 @@ const IndustryExplorer = () => {
       <div className="container max-w-7xl mx-auto px-4 lg:px-8">
         {/* Page Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
-            Virtual Tours for{" "}
-            <span className="text-[#2A74ED]">Every Industry</span>
+          <h1 className="text-3xl md:text-4xl font-bold text-[#2A74ED] mb-4">
+            Virtual Tours for Every Industry
           </h1>
           <p className="text-gray-600 text-lg">
             From real estate to education, discover how immersive 360°
-            experiences drive engagement, ROI, and customer trust.
+            experiences drive engagement, ROI, and customer trust
           </p>
         </div>
 

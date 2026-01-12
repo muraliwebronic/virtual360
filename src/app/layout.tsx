@@ -3,7 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://wplicense.webronics.com/";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://app.virtualtour360.ai/";
 
 export const viewport: Viewport = {
   themeColor: "#e7f6f26e",
@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Virtual Tour 360 | No-Code 360° Builder for WordPress & Vision Pro",
+    default: "Virtual Tour 360 | No-Code 360° Builder for WordPress , Vision Pro & Meta Quest",
     template: "%s | Virtual Tour 360",
   },
   description:
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "360 Tour Software",
     "WordPress Virtual Tour Plugin",
     "Apple Vision Pro WebXR",
+    "Meta Quest",
     "No-Code VR Builder",
     "Spatial Computing Web",
     "Real Estate Virtual Tours",
@@ -87,6 +88,7 @@ const jsonLd = {
     "Interactive Hotspots",
     "VR & Spatial Mode",
     "Apple Vision Pro Support",
+    "Meta Quest Support",
     "WordPress Integration"
   ],
   "audience": {

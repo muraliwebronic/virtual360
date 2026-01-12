@@ -40,6 +40,7 @@ const PricingSocialProof = () => {
             title="Trusted by 5,000+"
             highlight="Professionals Worldwide"
             size="medium"
+            breakOnDesktop
             gradient={true}
             className="mb-0" 
           />
